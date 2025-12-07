@@ -995,6 +995,34 @@
             50% { transform: scale(1.1); }
         }
 
+        /* Custom Ball Tier Styles */
+        .ability-info.custom {
+            border-left-color: #ff6b35;
+            background: linear-gradient(90deg,
+                rgba(255, 107, 53, 0.3) 0%,
+                rgba(247, 147, 30, 0.2) 50%,
+                rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        .type-badge.custom {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffcc00 100%);
+            color: #000;
+            font-weight: bold;
+            animation: customBadge 2s infinite;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes customBadge {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(255, 107, 53, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
+            }
+        }
+
         /* GODLY Tier Styles */
         .ability-info.godly {
             border-left-color: #00ffff;
@@ -1318,6 +1346,1105 @@
             margin-top: 0;
         }
 
+        /* Custom Ball Creator Styles */
+        .custom-ball-btn {
+            position: fixed;
+            top: 10px;
+            right: 450px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .custom-ball-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+        }
+
+        .custom-ball-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #ff6b35;
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 10002;
+            width: 1000px;
+            max-height: 95vh;
+            overflow-y: auto;
+            display: none;
+            box-shadow: 0 0 50px rgba(255, 107, 53, 0.4);
+        }
+
+        .custom-ball-panel.active {
+            display: block;
+            animation: gachaAppear 0.3s ease-out;
+        }
+
+        .custom-ball-title {
+            text-align: center;
+            color: #ff6b35;
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+
+        /* Studio Layout */
+        .studio-layout {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tools-panel {
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        .canvas-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stickers-panel {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .tool-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tool-section h4 {
+            color: #ff6b35;
+            font-size: 12px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255,107,53,0.3);
+            padding-bottom: 5px;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        .tool-btn {
+            background: #2a2a4a;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 8px 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+
+        .tool-btn span {
+            font-size: 18px;
+        }
+
+        .tool-btn small {
+            font-size: 9px;
+            margin-top: 2px;
+            color: #aaa;
+        }
+
+        .tool-btn:hover {
+            border-color: #ff6b35;
+            background: #3a3a5a;
+        }
+
+        .tool-btn.active {
+            border-color: #ff6b35;
+            background: rgba(255, 107, 53, 0.3);
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .color-picker-large {
+            width: 100%;
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .color-presets {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+        }
+
+        .color-preset {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .color-preset:hover {
+            border-color: #fff;
+            transform: scale(1.1);
+        }
+
+        .brush-preview-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            background: #1a1a2e;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+
+        .brush-preview {
+            background: #ff6b35;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .action-btn {
+            background: #2a2a4a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #3a3a5a;
+            border-color: #ff6b35;
+        }
+
+        .action-btn.danger:hover {
+            background: rgba(255, 0, 0, 0.3);
+            border-color: #ff0000;
+        }
+
+        /* Canvas */
+        .canvas-wrapper {
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+        }
+
+        #drawingCanvas {
+            background: #2a2a4a;
+            border-radius: 50%;
+            cursor: crosshair;
+            display: block;
+        }
+
+        .canvas-guide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px dashed rgba(255, 107, 53, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .canvas-info {
+            margin-top: 10px;
+            color: #aaa;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* Stickers Panel */
+        .sticker-tabs {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 8px;
+        }
+
+        .sticker-tab {
+            flex: 1;
+            background: #2a2a4a;
+            border: none;
+            padding: 5px;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 10px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .sticker-tab.active {
+            background: #ff6b35;
+            color: #fff;
+        }
+
+        .sticker-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .sticker-item {
+            background: #2a2a4a;
+            border: 2px solid #444;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: grab;
+            text-align: center;
+            font-size: 20px;
+            transition: all 0.2s;
+        }
+
+        .sticker-item:hover {
+            border-color: #ff6b35;
+            background: #3a3a5a;
+        }
+
+        .sticker-item.dragging {
+            opacity: 0.5;
+        }
+
+        .mini-preview {
+            width: 100%;
+            height: 100px;
+            background: radial-gradient(circle, #1a1a2e 0%, #000 100%);
+            border-radius: 50%;
+            border: 2px solid #ff6b35;
+        }
+
+        .name-input {
+            width: 100%;
+            background: #2a2a4a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 8px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .stat-row-mini {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .stat-row-mini label {
+            color: #aaa;
+            font-size: 10px;
+            width: 60px;
+        }
+
+        .stat-row-mini input[type="range"] {
+            flex: 1;
+            height: 4px;
+        }
+
+        /* Abilities Bar */
+        .abilities-bar {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .abilities-bar h4 {
+            color: #ff6b35;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .abilities-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .ability-option {
+            background: #2a2a4a;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            flex-shrink: 0;
+            min-width: 80px;
+        }
+
+        .ability-option:hover {
+            border-color: #ff6b35;
+        }
+
+        .ability-option.selected {
+            border-color: #ff6b35;
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        .ability-option .ability-icon {
+            font-size: 20px;
+            display: block;
+        }
+
+        .ability-option .ability-name {
+            color: #fff;
+            font-size: 10px;
+            display: block;
+            margin-top: 3px;
+        }
+
+        /* Studio Actions */
+        .studio-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .studio-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .studio-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .studio-btn.save {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+
+        .studio-btn.secondary {
+            background: #2a2a4a;
+            border: 1px solid #ff6b35;
+        }
+
+        .import-field {
+            background: #2a2a4a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 8px;
+            color: #fff;
+            width: 200px;
+            font-size: 11px;
+        }
+
+        .code-output {
+            flex: 1;
+            background: #0a0a1a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 8px;
+            color: #ff6b35;
+            font-family: monospace;
+            font-size: 10px;
+            max-height: 40px;
+            overflow: auto;
+            word-break: break-all;
+        }
+
+        /* Saved Section */
+        .saved-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .saved-section h4 {
+            color: #ff6b35;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .saved-balls-grid {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .saved-ball-item {
+            background: #2a2a4a;
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .saved-ball-item:hover {
+            border-color: #ff6b35;
+        }
+
+        .saved-ball-preview {
+            border-radius: 50%;
+            background: #1a1a2e;
+        }
+
+        .saved-ball-name {
+            color: #fff;
+            font-size: 10px;
+            margin-top: 5px;
+            max-width: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .delete-ball-btn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4444;
+            border: none;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            line-height: 16px;
+        }
+
+        .code-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 12px;
+        }
+
+        .code-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+        }
+
+        .code-btn.secondary {
+            background: linear-gradient(135deg, #444 0%, #666 100%);
+        }
+
+        .code-btn.save {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+
+        .saved-balls-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .saved-balls-section h3 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+
+        .saved-balls-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .saved-ball-item {
+            background: #2a2a4a;
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .saved-ball-item:hover {
+            border-color: #ff6b35;
+            transform: scale(1.05);
+        }
+
+        .saved-ball-preview {
+            border-radius: 50%;
+            background: #1a1a2e;
+            margin-bottom: 5px;
+        }
+
+        .saved-ball-name {
+            color: #fff;
+            font-weight: bold;
+            font-size: 11px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .delete-ball-btn {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4444;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 16px;
+            transition: all 0.2s;
+        }
+
+        .delete-ball-btn:hover {
+            background: #ff0000;
+            transform: scale(1.1);
+        }
+
+        /* ========== ABILITY CREATOR STYLES ========== */
+        .abilities-section {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .abilities-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .abilities-header h4 {
+            color: #ff6b35;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .ability-tabs {
+            display: flex;
+            gap: 5px;
+        }
+
+        .ability-tab {
+            background: #2a2a4a;
+            border: 1px solid #444;
+            padding: 6px 12px;
+            border-radius: 5px;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.2s;
+        }
+
+        .ability-tab:hover {
+            border-color: #ff6b35;
+            color: #fff;
+        }
+
+        .ability-tab.active {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-color: #ff6b35;
+            color: #fff;
+        }
+
+        .ability-tab-content {
+            display: none;
+        }
+
+        .ability-tab-content.active {
+            display: block;
+        }
+
+        /* Ability Creator */
+        .ability-creator {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .creator-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .creator-col {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        .creator-col h5 {
+            color: #ff6b35;
+            font-size: 11px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.3);
+            padding-bottom: 5px;
+        }
+
+        .creator-field {
+            margin-bottom: 8px;
+        }
+
+        .creator-field label {
+            display: block;
+            color: #aaa;
+            font-size: 10px;
+            margin-bottom: 4px;
+        }
+
+        .creator-field input[type="text"],
+        .creator-field select {
+            width: 100%;
+            background: #1a1a2e;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 6px 8px;
+            color: #fff;
+            font-size: 11px;
+        }
+
+        .creator-field input[type="range"] {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            background: #1a1a2e;
+            border-radius: 3px;
+        }
+
+        .creator-field input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: #ff6b35;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .color-input-small {
+            width: 100%;
+            height: 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Icon Picker */
+        .icon-picker {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 3px;
+            background: #1a1a2e;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .icon-option {
+            text-align: center;
+            font-size: 16px;
+            padding: 4px;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .icon-option:hover {
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        .icon-option.selected {
+            border-color: #ff6b35;
+            background: rgba(255, 107, 53, 0.3);
+        }
+
+        /* Modifier Grid */
+        .modifier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .modifier-check {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #ccc;
+            font-size: 10px;
+            cursor: pointer;
+            padding: 3px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+
+        .modifier-check:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modifier-check input[type="checkbox"] {
+            width: 12px;
+            height: 12px;
+            accent-color: #ff6b35;
+        }
+
+        /* Preview Column */
+        .preview-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ability-preview-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4a 100%);
+            border: 2px solid #ff6b35;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .preview-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .preview-name {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .preview-desc {
+            color: #aaa;
+            font-size: 10px;
+            margin-bottom: 8px;
+        }
+
+        .preview-stats {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .stat-pill {
+            background: rgba(255, 107, 53, 0.3);
+            color: #ff6b35;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 9px;
+        }
+
+        .preview-modifiers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .mod-tag {
+            background: rgba(100, 100, 255, 0.3);
+            color: #aaf;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 8px;
+        }
+
+        .ability-cost {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+            color: #aaa;
+            font-size: 11px;
+        }
+
+        .cost-value {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .create-ability-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .create-ability-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+        }
+
+        /* Secondary Effect Section */
+        .secondary-effect-section {
+            margin-top: 10px;
+            border: 1px solid #444;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 8px 12px;
+            cursor: pointer;
+            color: #ff6b35;
+            font-size: 11px;
+        }
+
+        .section-header:hover {
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        .toggle-arrow {
+            transition: transform 0.3s;
+        }
+
+        .toggle-arrow.open {
+            transform: rotate(180deg);
+        }
+
+        .secondary-content {
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary-content .creator-row {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Library Tab */
+        .library-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .small-btn {
+            background: #2a2a4a;
+            border: 1px solid #444;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #aaa;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .small-btn:hover {
+            border-color: #ff4444;
+            color: #ff4444;
+        }
+
+        .empty-library {
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        /* Selected Abilities */
+        .selected-abilities {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .selected-abilities h5 {
+            color: #ff6b35;
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .selected-slots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ability-slot {
+            flex: 1;
+            background: #1a1a2e;
+            border: 2px dashed #444;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .ability-slot.empty {
+            color: #444;
+            font-size: 20px;
+        }
+
+        .ability-slot.filled {
+            border-style: solid;
+            border-color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .ability-slot .slot-icon {
+            font-size: 24px;
+        }
+
+        .ability-slot .slot-name {
+            font-size: 9px;
+            color: #fff;
+            margin-top: 4px;
+        }
+
+        .ability-slot .remove-slot {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ff4444;
+            border: none;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            color: #fff;
+            font-size: 10px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .ability-slot.filled:hover .remove-slot {
+            display: block;
+        }
+
+        /* Custom ability option styling */
+        .ability-option.custom {
+            border-color: #9966ff;
+            position: relative;
+        }
+
+        .ability-option.custom::before {
+            content: '★';
+            position: absolute;
+            top: 2px;
+            right: 4px;
+            font-size: 8px;
+            color: #9966ff;
+        }
+
+        .delete-ability-btn {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ff4444;
+            border: none;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 14px;
+            cursor: pointer;
+            display: none;
+            z-index: 10;
+        }
+
+        .ability-option.custom:hover .delete-ability-btn {
+            display: block;
+        }
+
+        .delete-ability-btn:hover {
+            background: #ff0000;
+            transform: scale(1.1);
+        }
+
+        .close-custom-ball {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: #ff6b35;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .close-custom-ball:hover {
+            opacity: 1;
+        }
+
         /* Fractal effect for Paradoxical */
         .fractal-overlay {
             position: fixed;
@@ -1427,6 +2554,445 @@
     <!-- Gacha Toggle Button -->
     <button class="gacha-toggle-btn" onclick="toggleGachaPanel()">ROLL SHOP</button>
     <button class="skill-tree-btn" onclick="toggleSkillTree()">SKILL TREE</button>
+    <button class="custom-ball-btn" onclick="toggleCustomBallPanel()">CREATE BALL</button>
+
+    <!-- Custom Ball Creator Panel - Canvas Drawing System -->
+    <div id="customBallPanel" class="custom-ball-panel">
+        <span class="close-custom-ball" onclick="toggleCustomBallPanel()">X</span>
+        <h2 class="custom-ball-title">CUSTOM BALL STUDIO</h2>
+
+        <div class="studio-layout">
+            <!-- Left - Tools Panel -->
+            <div class="tools-panel">
+                <div class="tool-section">
+                    <h4>Drawing Tools</h4>
+                    <div class="tool-grid">
+                        <button class="tool-btn active" id="toolPen" onclick="setDrawTool('pen')" title="Pen">
+                            <span>✏️</span>
+                            <small>Pen</small>
+                        </button>
+                        <button class="tool-btn" id="toolBrush" onclick="setDrawTool('brush')" title="Brush">
+                            <span>🖌️</span>
+                            <small>Brush</small>
+                        </button>
+                        <button class="tool-btn" id="toolEraser" onclick="setDrawTool('eraser')" title="Eraser">
+                            <span>🧹</span>
+                            <small>Eraser</small>
+                        </button>
+                        <button class="tool-btn" id="toolFill" onclick="setDrawTool('fill')" title="Fill">
+                            <span>🪣</span>
+                            <small>Fill</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4>Shapes</h4>
+                    <div class="tool-grid">
+                        <button class="tool-btn" id="toolCircle" onclick="setDrawTool('circle')" title="Circle">
+                            <span>⭕</span>
+                            <small>Circle</small>
+                        </button>
+                        <button class="tool-btn" id="toolRect" onclick="setDrawTool('rect')" title="Rectangle">
+                            <span>⬜</span>
+                            <small>Rect</small>
+                        </button>
+                        <button class="tool-btn" id="toolTriangle" onclick="setDrawTool('triangle')" title="Triangle">
+                            <span>🔺</span>
+                            <small>Triangle</small>
+                        </button>
+                        <button class="tool-btn" id="toolStar" onclick="setDrawTool('star')" title="Star">
+                            <span>⭐</span>
+                            <small>Star</small>
+                        </button>
+                        <button class="tool-btn" id="toolLine" onclick="setDrawTool('line')" title="Line">
+                            <span>📏</span>
+                            <small>Line</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4>Color</h4>
+                    <input type="color" id="drawColor" value="#ff6b35" class="color-picker-large">
+                    <div class="color-presets">
+                        <div class="color-preset" style="background:#ff0000" onclick="setDrawColor('#ff0000')"></div>
+                        <div class="color-preset" style="background:#ff8800" onclick="setDrawColor('#ff8800')"></div>
+                        <div class="color-preset" style="background:#ffff00" onclick="setDrawColor('#ffff00')"></div>
+                        <div class="color-preset" style="background:#00ff00" onclick="setDrawColor('#00ff00')"></div>
+                        <div class="color-preset" style="background:#00ffff" onclick="setDrawColor('#00ffff')"></div>
+                        <div class="color-preset" style="background:#0088ff" onclick="setDrawColor('#0088ff')"></div>
+                        <div class="color-preset" style="background:#8800ff" onclick="setDrawColor('#8800ff')"></div>
+                        <div class="color-preset" style="background:#ff00ff" onclick="setDrawColor('#ff00ff')"></div>
+                        <div class="color-preset" style="background:#ffffff" onclick="setDrawColor('#ffffff')"></div>
+                        <div class="color-preset" style="background:#888888" onclick="setDrawColor('#888888')"></div>
+                        <div class="color-preset" style="background:#000000" onclick="setDrawColor('#000000')"></div>
+                        <div class="color-preset" style="background:#8b4513" onclick="setDrawColor('#8b4513')"></div>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4>Brush Size: <span id="brushSizeVal">8</span></h4>
+                    <input type="range" id="brushSize" min="1" max="40" value="8" oninput="updateBrushSize()">
+                    <div class="brush-preview-container">
+                        <div id="brushPreview" class="brush-preview"></div>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4>Actions</h4>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="undoDrawing()">↩️ Undo</button>
+                        <button class="action-btn" onclick="redoDrawing()">↪️ Redo</button>
+                        <button class="action-btn danger" onclick="clearCanvas()">🗑️ Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center - Drawing Canvas -->
+            <div class="canvas-container">
+                <div class="canvas-wrapper">
+                    <canvas id="drawingCanvas" width="200" height="200"></canvas>
+                    <div class="canvas-guide"></div>
+                </div>
+                <div class="canvas-info">
+                    <span>Draw your ball design! The circle shows the ball boundary.</span>
+                </div>
+            </div>
+
+            <!-- Right - Stickers & Preview -->
+            <div class="stickers-panel">
+                <div class="tool-section">
+                    <h4>Drag & Drop Parts</h4>
+                    <div class="sticker-tabs">
+                        <button class="sticker-tab active" onclick="showStickerCategory('eyes')">Eyes</button>
+                        <button class="sticker-tab" onclick="showStickerCategory('mouths')">Mouths</button>
+                        <button class="sticker-tab" onclick="showStickerCategory('hats')">Hats</button>
+                        <button class="sticker-tab" onclick="showStickerCategory('extras')">Extras</button>
+                    </div>
+                    <div class="sticker-grid" id="stickerGrid">
+                        <!-- Stickers populated by JS -->
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h4>Live Preview</h4>
+                    <canvas id="customBallPreview" width="100" height="100" class="mini-preview"></canvas>
+                </div>
+
+                <div class="tool-section">
+                    <h4>Ball Name</h4>
+                    <input type="text" id="customBallName" value="My Ball" maxlength="20" class="name-input">
+                </div>
+
+                <div class="tool-section">
+                    <h4>Stats</h4>
+                    <div class="stat-row-mini">
+                        <label>DMG: <span id="damageVal">25</span></label>
+                        <input type="range" id="customBallDamage" min="10" max="40" value="25" oninput="updateStatsDisplay()">
+                    </div>
+                    <div class="stat-row-mini">
+                        <label>SPD: <span id="speedVal">1.0</span></label>
+                        <input type="range" id="customBallSpeed" min="0.5" max="1.5" step="0.1" value="1.0" oninput="updateStatsDisplay()">
+                    </div>
+                    <div class="stat-row-mini">
+                        <label>SIZE: <span id="sizeVal">1.0</span></label>
+                        <input type="range" id="customBallSize" min="0.8" max="1.5" step="0.1" value="1.0" oninput="updateStatsDisplay()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abilities Section - Tabbed Interface -->
+        <div class="abilities-section">
+            <div class="abilities-header">
+                <h4>Abilities (up to 4)</h4>
+                <div class="ability-tabs">
+                    <button class="ability-tab active" onclick="showAbilityTab('presets')">Preset Abilities</button>
+                    <button class="ability-tab" onclick="showAbilityTab('creator')">Create Custom</button>
+                    <button class="ability-tab" onclick="showAbilityTab('library')">My Library</button>
+                </div>
+            </div>
+
+            <!-- Preset Abilities Tab -->
+            <div class="ability-tab-content active" id="presetsTab">
+                <div class="abilities-scroll" id="abilitySelectGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Ability Creator Tab -->
+            <div class="ability-tab-content" id="creatorTab">
+                <div class="ability-creator">
+                    <div class="creator-row">
+                        <div class="creator-col">
+                            <h5>Basic Info</h5>
+                            <div class="creator-field">
+                                <label>Ability Name</label>
+                                <input type="text" id="newAbilityName" value="My Ability" maxlength="20">
+                            </div>
+                            <div class="creator-field">
+                                <label>Icon</label>
+                                <div class="icon-picker" id="abilityIconPicker">
+                                    <div class="icon-option selected" data-icon="💥">💥</div>
+                                    <div class="icon-option" data-icon="🔥">🔥</div>
+                                    <div class="icon-option" data-icon="❄️">❄️</div>
+                                    <div class="icon-option" data-icon="⚡">⚡</div>
+                                    <div class="icon-option" data-icon="💨">💨</div>
+                                    <div class="icon-option" data-icon="🛡️">🛡️</div>
+                                    <div class="icon-option" data-icon="💚">💚</div>
+                                    <div class="icon-option" data-icon="💀">💀</div>
+                                    <div class="icon-option" data-icon="🌀">🌀</div>
+                                    <div class="icon-option" data-icon="✨">✨</div>
+                                    <div class="icon-option" data-icon="🎯">🎯</div>
+                                    <div class="icon-option" data-icon="💣">💣</div>
+                                    <div class="icon-option" data-icon="🌊">🌊</div>
+                                    <div class="icon-option" data-icon="🌪️">🌪️</div>
+                                    <div class="icon-option" data-icon="☄️">☄️</div>
+                                    <div class="icon-option" data-icon="🧲">🧲</div>
+                                </div>
+                            </div>
+                            <div class="creator-field">
+                                <label>Color Theme</label>
+                                <input type="color" id="abilityColor" value="#ff6b35" class="color-input-small">
+                            </div>
+                        </div>
+
+                        <div class="creator-col">
+                            <h5>Primary Effect</h5>
+                            <div class="creator-field">
+                                <label>Effect Type</label>
+                                <select id="primaryEffectType">
+                                    <optgroup label="Damage">
+                                        <option value="damage_aoe">AoE Damage</option>
+                                        <option value="damage_single">Single Target</option>
+                                        <option value="damage_dot">Damage Over Time</option>
+                                        <option value="damage_execute">Execute (% HP)</option>
+                                    </optgroup>
+                                    <optgroup label="Projectiles">
+                                        <option value="projectile_single">Single Projectile</option>
+                                        <option value="projectile_burst">Burst (3 shots)</option>
+                                        <option value="projectile_spray">Spray (5 shots)</option>
+                                        <option value="projectile_homing">Homing Missile</option>
+                                        <option value="projectile_boomerang">Boomerang</option>
+                                        <option value="projectile_orbit">Orbiting Shots</option>
+                                    </optgroup>
+                                    <optgroup label="Defense">
+                                        <option value="shield_normal">Shield</option>
+                                        <option value="shield_reflect">Reflect Shield</option>
+                                        <option value="shield_absorb">Absorb Shield</option>
+                                        <option value="invuln">Invulnerability</option>
+                                    </optgroup>
+                                    <optgroup label="Healing">
+                                        <option value="heal_instant">Instant Heal</option>
+                                        <option value="heal_over_time">Heal Over Time</option>
+                                        <option value="lifesteal">Lifesteal Aura</option>
+                                    </optgroup>
+                                    <optgroup label="Movement">
+                                        <option value="dash">Dash</option>
+                                        <option value="teleport">Teleport</option>
+                                        <option value="blink_strike">Blink Strike</option>
+                                        <option value="speed_boost">Speed Boost</option>
+                                        <option value="phase">Phase (Through Walls)</option>
+                                    </optgroup>
+                                    <optgroup label="Control">
+                                        <option value="stun">Stun</option>
+                                        <option value="slow">Slow</option>
+                                        <option value="freeze">Freeze</option>
+                                        <option value="knockback">Knockback</option>
+                                        <option value="pull">Pull/Vortex</option>
+                                        <option value="confuse">Confuse</option>
+                                    </optgroup>
+                                    <optgroup label="Buffs">
+                                        <option value="buff_damage">Damage Boost</option>
+                                        <option value="buff_speed">Speed Boost</option>
+                                        <option value="buff_size">Size Change</option>
+                                        <option value="buff_crit">Crit Chance</option>
+                                        <option value="rage">Rage Mode</option>
+                                    </optgroup>
+                                    <optgroup label="Summons">
+                                        <option value="summon_clone">Summon Clone</option>
+                                        <option value="summon_turret">Deploy Turret</option>
+                                        <option value="summon_trap">Place Trap</option>
+                                        <option value="summon_minions">Summon Minions</option>
+                                    </optgroup>
+                                    <optgroup label="Special">
+                                        <option value="time_slow">Slow Time</option>
+                                        <option value="gravity_well">Gravity Well</option>
+                                        <option value="swap">Swap Positions</option>
+                                        <option value="copy">Copy Enemy Ability</option>
+                                        <option value="explode_death">Explode on Death</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="creator-field">
+                                <label>Power: <span id="primaryPowerVal">50</span></label>
+                                <input type="range" id="primaryPower" min="10" max="200" value="50" oninput="updateAbilityPreview()">
+                            </div>
+                            <div class="creator-field">
+                                <label>Range: <span id="primaryRangeVal">150</span></label>
+                                <input type="range" id="primaryRange" min="50" max="400" value="150" oninput="updateAbilityPreview()">
+                            </div>
+                            <div class="creator-field">
+                                <label>Duration: <span id="primaryDurationVal">1.0</span>s</label>
+                                <input type="range" id="primaryDuration" min="0.5" max="5" step="0.5" value="1" oninput="updateAbilityPreview()">
+                            </div>
+                        </div>
+
+                        <div class="creator-col">
+                            <h5>Modifiers</h5>
+                            <div class="modifier-grid">
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modPiercing"> Piercing
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modExplosive"> Explosive
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modChain"> Chain (3 targets)
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modVampire"> Vampiric (30%)
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modCrit"> Crit Chance +25%
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modSilence"> Silencing
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modBurn"> Burning DoT
+                                </label>
+                                <label class="modifier-check">
+                                    <input type="checkbox" id="modPoison"> Poison DoT
+                                </label>
+                            </div>
+
+                            <h5 style="margin-top:10px;">Cooldown</h5>
+                            <div class="creator-field">
+                                <label>Cooldown: <span id="abilityCooldownVal">3</span>s</label>
+                                <input type="range" id="abilityCooldown" min="1" max="30" value="3" oninput="updateAbilityPreview()">
+                            </div>
+
+                            <h5 style="margin-top:10px;">Trigger</h5>
+                            <div class="creator-field">
+                                <select id="abilityTrigger">
+                                    <option value="active">Active (Press Key)</option>
+                                    <option value="passive">Passive (Always On)</option>
+                                    <option value="on_hit">On Hit Enemy</option>
+                                    <option value="on_damage">When Taking Damage</option>
+                                    <option value="low_hp">When Low HP (&lt;30%)</option>
+                                    <option value="on_kill">On Kill</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="creator-col preview-col">
+                            <h5>Preview</h5>
+                            <div class="ability-preview-box">
+                                <div class="preview-icon" id="previewAbilityIcon">💥</div>
+                                <div class="preview-name" id="previewAbilityName">My Ability</div>
+                                <div class="preview-desc" id="previewAbilityDesc">AoE Damage: 50 power</div>
+                                <div class="preview-stats">
+                                    <span class="stat-pill">Range: 150</span>
+                                    <span class="stat-pill">CD: 3s</span>
+                                </div>
+                                <div class="preview-modifiers" id="previewModifiers"></div>
+                            </div>
+                            <div class="ability-cost">
+                                <span>Ability Cost:</span>
+                                <span class="cost-value" id="abilityCostValue">50</span>
+                                <span class="cost-currency">points</span>
+                            </div>
+                            <button class="create-ability-btn" onclick="createCustomAbility()">
+                                ✨ Create Ability
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Effect (Advanced) -->
+                    <div class="secondary-effect-section">
+                        <div class="section-header" onclick="toggleSecondaryEffect()">
+                            <span>➕ Add Secondary Effect (Advanced)</span>
+                            <span class="toggle-arrow" id="secondaryArrow">▼</span>
+                        </div>
+                        <div class="secondary-content" id="secondaryEffectContent" style="display:none;">
+                            <div class="creator-row">
+                                <div class="creator-col">
+                                    <div class="creator-field">
+                                        <label>Secondary Effect</label>
+                                        <select id="secondaryEffectType">
+                                            <option value="none">None</option>
+                                            <option value="damage_aoe">AoE Damage</option>
+                                            <option value="heal_instant">Heal Self</option>
+                                            <option value="speed_boost">Speed Boost</option>
+                                            <option value="shield_normal">Gain Shield</option>
+                                            <option value="slow">Slow Enemies</option>
+                                            <option value="knockback">Knockback</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="creator-col">
+                                    <div class="creator-field">
+                                        <label>Secondary Power: <span id="secondaryPowerVal">25</span></label>
+                                        <input type="range" id="secondaryPower" min="10" max="100" value="25" oninput="updateAbilityPreview()">
+                                    </div>
+                                </div>
+                                <div class="creator-col">
+                                    <div class="creator-field">
+                                        <label>Trigger Delay: <span id="secondaryDelayVal">0</span>s</label>
+                                        <input type="range" id="secondaryDelay" min="0" max="3" step="0.5" value="0" oninput="updateAbilityPreview()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Library Tab -->
+            <div class="ability-tab-content" id="libraryTab">
+                <div class="library-header">
+                    <span>Your Custom Abilities</span>
+                    <button class="small-btn" onclick="clearAbilityLibrary()">Clear All</button>
+                </div>
+                <div class="abilities-scroll" id="customAbilityLibrary">
+                    <div class="empty-library">No custom abilities yet. Create one in the Creator tab!</div>
+                </div>
+            </div>
+
+            <!-- Selected Abilities Display -->
+            <div class="selected-abilities">
+                <h5>Selected Abilities (<span id="selectedCount">0</span>/4)</h5>
+                <div class="selected-slots" id="selectedAbilitySlots">
+                    <div class="ability-slot empty">1</div>
+                    <div class="ability-slot empty">2</div>
+                    <div class="ability-slot empty">3</div>
+                    <div class="ability-slot empty">4</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="studio-actions">
+            <div class="action-group">
+                <button class="studio-btn save" onclick="saveDrawnBall()">💾 Save Ball</button>
+                <button class="studio-btn" onclick="generateCustomBallCode()">📋 Get Code</button>
+                <button class="studio-btn secondary" onclick="copyCustomBallCode()">📎 Copy</button>
+            </div>
+            <div class="action-group">
+                <input type="text" id="importCodeInput" placeholder="Paste code here..." class="import-field">
+                <button class="studio-btn" onclick="importCustomBall()">📥 Import</button>
+            </div>
+            <div class="code-output" id="customBallCode"></div>
+        </div>
+
+        <!-- Saved Balls -->
+        <div class="saved-section">
+            <h4>Your Saved Balls</h4>
+            <div class="saved-balls-grid" id="savedBallsGrid"></div>
+        </div>
+    </div>
 
     <!-- Gacha Panel -->
     <div id="gachaPanel" class="gacha-panel">
@@ -2251,6 +3817,10 @@
         }
 
         function isWeaponUnlocked(weaponId) {
+            // Custom balls are always unlocked once created
+            if (weaponId && weaponId.startsWith('custom_')) {
+                return true;
+            }
             // Unarmed requires achievement
             if (weaponId === 'unarmed') {
                 return gameData.achievements.includes('true_warrior');
@@ -7781,7 +9351,7 @@
                 const spearIdx = weapons.findIndex(w => w.id === 'spear');
 
                 // Build dropdown with all weapons
-                const weaponTypes = ['secret', 'godly', 'mythical', 'legendary', 'special', 'melee', 'magic'];
+                const weaponTypes = ['custom', 'secret', 'godly', 'mythical', 'legendary', 'special', 'melee', 'magic'];
                 weaponTypes.forEach(type => {
                     const typeWeapons = weapons.filter(w => w.type === type);
                     if (typeWeapons.length > 0) {
@@ -10045,6 +11615,12 @@
                     case 'killswitch': this.useKillswitchAbility(); break;
                     case 'britishdemon': this.useBritishDemonAbility(); break;
                     case 'abachan': this.useAbaChanAbility(); break;
+                    default:
+                        // Handle custom balls
+                        if (this.weapon.id && this.weapon.id.startsWith('custom_')) {
+                            this.useCustomBallAbility();
+                        }
+                        break;
                     case 'bow': this.useBowAbility(); break;
                     case 'longsword': this.useLongswordAbility(); break;
                     case 'chainsaw': this.useChainsawAbility(); break;
@@ -13296,6 +14872,572 @@
                         hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 200 + i * 50, color: '#ff0000' });
                     }, i * 150);
                 }
+            }
+
+            // === CUSTOM BALL ABILITIES ===
+            useCustomBallAbility() {
+                const abilities = this.weapon.abilities;
+                if (!abilities || abilities.length === 0) return;
+
+                if (!this.customAbilityIndex) this.customAbilityIndex = 0;
+                this.currentAbility = abilities[this.customAbilityIndex];
+                this.customAbilityIndex = (this.customAbilityIndex + 1) % abilities.length;
+
+                // Check if this is a created ability (starts with 'created_')
+                if (this.currentAbility.startsWith('created_')) {
+                    this.useCreatedAbility(this.currentAbility);
+                    return;
+                }
+
+                switch(this.currentAbility) {
+                    case 'dash': this.customDash(); break;
+                    case 'shield': this.customShield(); break;
+                    case 'heal': this.customHeal(); break;
+                    case 'fireball': this.customFireball(); break;
+                    case 'freeze': this.customFreeze(); break;
+                    case 'slam': this.customSlam(); break;
+                    case 'speed': this.customSpeed(); break;
+                    case 'rage': this.customRage(); break;
+                    case 'teleport': this.customTeleport(); break;
+                    case 'thorns': this.customThorns(); break;
+                    case 'summon': this.customSummon(); break;
+                    case 'lightning': this.customLightning(); break;
+                    case 'poison': this.customPoison(); break;
+                    case 'vampiric': this.customVampiric(); break;
+                    case 'clone': this.customClone(); break;
+                    case 'explosion': this.customExplosion(); break;
+                }
+            }
+
+            useCreatedAbility(abilityId) {
+                // Find the ability data from the weapon's customConfig
+                const config = this.weapon.customConfig;
+                let abilityData = null;
+
+                if (config && config.createdAbilities) {
+                    abilityData = config.createdAbilities.find(a => a.id === abilityId);
+                }
+
+                // Fallback: look in the global createdCustomAbilities
+                if (!abilityData) {
+                    abilityData = createdCustomAbilities.find(a => a.id === abilityId);
+                }
+
+                if (!abilityData) {
+                    // Last fallback: find in customAbilityOptions
+                    abilityData = customAbilityOptions.find(a => a.id === abilityId);
+                }
+
+                if (!abilityData) return;
+
+                const power = abilityData.power || 50;
+                const range = abilityData.range || 100;
+                const color = abilityData.color || '#ff6b35';
+
+                switch(abilityData.effect) {
+                    case 'damage':
+                        this.createdAoeDamage(power, range, color);
+                        break;
+                    case 'projectile':
+                        this.createdProjectile(power, color);
+                        break;
+                    case 'heal':
+                        this.createdHeal(power, color);
+                        break;
+                    case 'shield':
+                        this.createdShield(power, color);
+                        break;
+                    case 'speed':
+                        this.createdSpeedBoost(power, range, color);
+                        break;
+                    case 'damageBoost':
+                        this.createdDamageBoost(power, range, color);
+                        break;
+                    case 'slow':
+                        this.createdSlow(power, range, color);
+                        break;
+                    case 'stun':
+                        this.createdStun(power, range, color);
+                        break;
+                    case 'teleport':
+                        this.createdTeleport(color);
+                        break;
+                    case 'invuln':
+                        this.createdInvuln(power, color);
+                        break;
+                }
+            }
+
+            createdAoeDamage(power, range, color) {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < range) {
+                            b.takeDamage(power, this);
+                            for (let i = 0; i < 5; i++) {
+                                particles.push({
+                                    x: b.x + (Math.random() - 0.5) * 20,
+                                    y: b.y + (Math.random() - 0.5) * 20,
+                                    vx: (Math.random() - 0.5) * 5,
+                                    vy: (Math.random() - 0.5) * 5,
+                                    life: 20, color: color, size: 6
+                                });
+                            }
+                        }
+                    }
+                });
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: range, color: color });
+            }
+
+            createdProjectile(power, color) {
+                const target = this.findNearestEnemy();
+                if (target) {
+                    const dx = target.x - this.x;
+                    const dy = target.y - this.y;
+                    const dist = Math.hypot(dx, dy);
+                    projectiles.push({
+                        x: this.x, y: this.y,
+                        vx: (dx / dist) * 12, vy: (dy / dist) * 12,
+                        size: 10, color: color, owner: this,
+                        damage: power, type: 'created', trail: []
+                    });
+                }
+            }
+
+            createdHeal(power, color) {
+                this.health = Math.min(this.maxHealth, this.health + power);
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 50, color: color });
+                for (let i = 0; i < 12; i++) {
+                    particles.push({
+                        x: this.x + (Math.random() - 0.5) * 30,
+                        y: this.y + (Math.random() - 0.5) * 30,
+                        vx: 0, vy: -2, life: 30, color: color, size: 5
+                    });
+                }
+            }
+
+            createdShield(power, color) {
+                this.shield = power;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 50, color: color });
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i / 12) * Math.PI * 2;
+                    particles.push({
+                        x: this.x + Math.cos(angle) * 30,
+                        y: this.y + Math.sin(angle) * 30,
+                        vx: Math.cos(angle) * 2, vy: Math.sin(angle) * 2,
+                        life: 25, color: color, size: 5
+                    });
+                }
+            }
+
+            createdSpeedBoost(power, duration, color) {
+                this.speedBoostActive = true;
+                this.speedBoostTimer = duration;
+                this.vx *= 1 + (power / 100);
+                this.vy *= 1 + (power / 100);
+                for (let i = 0; i < 8; i++) {
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: (Math.random() - 0.5) * 5, vy: (Math.random() - 0.5) * 5,
+                        life: 20, color: color, size: 5
+                    });
+                }
+            }
+
+            createdDamageBoost(power, duration, color) {
+                this.damageMultiplier = 1 + (power / 100);
+                this.rageActive = true;
+                this.rageTimer = duration;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 40, color: color });
+            }
+
+            createdSlow(power, range, color) {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < range) {
+                            b.vx *= 1 - (power / 100);
+                            b.vy *= 1 - (power / 100);
+                            b.slowEffect = 90;
+                        }
+                    }
+                });
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: range, color: color });
+            }
+
+            createdStun(power, range, color) {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < range) {
+                            b.stunned = power;
+                        }
+                    }
+                });
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: range, color: color });
+            }
+
+            createdTeleport(color) {
+                for (let i = 0; i < 10; i++) {
+                    const angle = (i / 10) * Math.PI * 2;
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: Math.cos(angle) * 5, vy: Math.sin(angle) * 5,
+                        life: 15, color: color, size: 5
+                    });
+                }
+                this.x = centerX + (Math.random() - 0.5) * arenaRadius * 1.5;
+                this.y = centerY + (Math.random() - 0.5) * arenaRadius * 1.5;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 40, color: color });
+            }
+
+            createdInvuln(power, color) {
+                this.isInvulnerable = true;
+                const duration = power * 50; // power determines duration in ms
+                setTimeout(() => { if (this.alive) this.isInvulnerable = false; }, duration);
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 50, color: color });
+                for (let i = 0; i < 15; i++) {
+                    particles.push({
+                        x: this.x + (Math.random() - 0.5) * 40,
+                        y: this.y + (Math.random() - 0.5) * 40,
+                        vx: 0, vy: -1, life: 30, color: color, size: 6
+                    });
+                }
+            }
+
+            customDash() {
+                const angle = Math.atan2(this.vy, this.vx) || Math.random() * Math.PI * 2;
+                this.vx = Math.cos(angle) * 18;
+                this.vy = Math.sin(angle) * 18;
+                this.isInvulnerable = true;
+                setTimeout(() => { if (this.alive) this.isInvulnerable = false; }, 300);
+
+                for (let i = 0; i < 10; i++) {
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: -Math.cos(angle) * 3 + (Math.random() - 0.5) * 2,
+                        vy: -Math.sin(angle) * 3 + (Math.random() - 0.5) * 2,
+                        life: 20, color: this.weapon.color || '#ffffff', size: 6
+                    });
+                }
+            }
+
+            customShield() {
+                this.shield = 80;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 60, color: '#00bfff' });
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i / 12) * Math.PI * 2;
+                    particles.push({
+                        x: this.x + Math.cos(angle) * 35,
+                        y: this.y + Math.sin(angle) * 35,
+                        vx: Math.cos(angle) * 2, vy: Math.sin(angle) * 2,
+                        life: 30, color: '#00bfff', size: 5
+                    });
+                }
+            }
+
+            customHeal() {
+                this.health = Math.min(this.maxHealth, this.health + 40);
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 50, color: '#00ff00' });
+                for (let i = 0; i < 15; i++) {
+                    particles.push({
+                        x: this.x + (Math.random() - 0.5) * 30,
+                        y: this.y + (Math.random() - 0.5) * 30,
+                        vx: 0, vy: -2,
+                        life: 30, color: '#00ff00', size: 5
+                    });
+                }
+            }
+
+            customFireball() {
+                const target = this.findNearestEnemy();
+                if (target) {
+                    const dx = target.x - this.x;
+                    const dy = target.y - this.y;
+                    const dist = Math.hypot(dx, dy);
+                    projectiles.push({
+                        x: this.x, y: this.y,
+                        vx: (dx / dist) * 10, vy: (dy / dist) * 10,
+                        size: 12, color: '#ff4500', owner: this,
+                        damage: this.weapon.damage, type: 'fireball', trail: []
+                    });
+                }
+            }
+
+            customFreeze() {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < 120) {
+                            b.vx *= 0.3;
+                            b.vy *= 0.3;
+                            b.slowEffect = 90;
+                            for (let i = 0; i < 8; i++) {
+                                particles.push({
+                                    x: b.x + (Math.random() - 0.5) * 30,
+                                    y: b.y + (Math.random() - 0.5) * 30,
+                                    vx: (Math.random() - 0.5) * 3, vy: (Math.random() - 0.5) * 3,
+                                    life: 25, color: '#88ffff', size: 5
+                                });
+                            }
+                        }
+                    }
+                });
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 120, color: '#88ffff' });
+            }
+
+            customSlam() {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < 100) {
+                            b.takeDamage(this.weapon.damage * 1.5, this);
+                            const angle = Math.atan2(b.y - this.y, b.x - this.x);
+                            b.vx += Math.cos(angle) * 8;
+                            b.vy += Math.sin(angle) * 8;
+                        }
+                    }
+                });
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 100, color: '#ff6600' });
+                for (let i = 0; i < 20; i++) {
+                    const angle = (i / 20) * Math.PI * 2;
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: Math.cos(angle) * 8, vy: Math.sin(angle) * 8,
+                        life: 25, color: '#ff6600', size: 7
+                    });
+                }
+            }
+
+            customSpeed() {
+                this.speedBoostActive = true;
+                this.speedBoostTimer = 120;
+                this.vx *= 1.8;
+                this.vy *= 1.8;
+                for (let i = 0; i < 10; i++) {
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: (Math.random() - 0.5) * 5, vy: (Math.random() - 0.5) * 5,
+                        life: 20, color: '#ffff00', size: 5
+                    });
+                }
+            }
+
+            customRage() {
+                this.damageMultiplier = 2;
+                this.rageActive = true;
+                this.rageTimer = 150;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 50, color: '#ff0000' });
+                for (let i = 0; i < 15; i++) {
+                    particles.push({
+                        x: this.x + (Math.random() - 0.5) * 40,
+                        y: this.y + (Math.random() - 0.5) * 40,
+                        vx: (Math.random() - 0.5) * 4, vy: (Math.random() - 0.5) * 4,
+                        life: 30, color: '#ff0000', size: 6
+                    });
+                }
+            }
+
+            customTeleport() {
+                const newX = centerX + (Math.random() - 0.5) * arenaRadius * 1.5;
+                const newY = centerY + (Math.random() - 0.5) * arenaRadius * 1.5;
+
+                // Disappear effect
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i / 12) * Math.PI * 2;
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: Math.cos(angle) * 5, vy: Math.sin(angle) * 5,
+                        life: 20, color: '#aa00ff', size: 5
+                    });
+                }
+
+                this.x = newX;
+                this.y = newY;
+
+                // Appear effect
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 50, color: '#aa00ff' });
+            }
+
+            customThorns() {
+                this.thornsActive = true;
+                this.thornsTimer = 180;
+                this.thornsDamage = this.weapon.damage * 0.5;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 40, color: '#00ff00' });
+            }
+
+            customSummon() {
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 50;
+                const minionX = this.x + Math.cos(angle) * dist;
+                const minionY = this.y + Math.sin(angle) * dist;
+
+                // Create minion as a simple tracking effect
+                const minion = {
+                    x: minionX, y: minionY,
+                    owner: this, life: 300, damage: 15
+                };
+
+                const minionInterval = setInterval(() => {
+                    if (!this.alive || minion.life <= 0 || !gameRunning) {
+                        clearInterval(minionInterval);
+                        return;
+                    }
+                    minion.life--;
+
+                    // Find nearest enemy and move toward it
+                    let nearestEnemy = null;
+                    let nearestDist = Infinity;
+                    balls.forEach(b => {
+                        if (b !== this && b.alive && !this.isTeammate(b)) {
+                            const d = Math.hypot(b.x - minion.x, b.y - minion.y);
+                            if (d < nearestDist) {
+                                nearestDist = d;
+                                nearestEnemy = b;
+                            }
+                        }
+                    });
+
+                    if (nearestEnemy) {
+                        const dx = nearestEnemy.x - minion.x;
+                        const dy = nearestEnemy.y - minion.y;
+                        const d = Math.hypot(dx, dy);
+                        minion.x += (dx / d) * 3;
+                        minion.y += (dy / d) * 3;
+
+                        if (d < 30) {
+                            nearestEnemy.takeDamage(minion.damage, this);
+                            minion.life -= 30;
+                        }
+                    }
+
+                    // Draw minion particle
+                    particles.push({
+                        x: minion.x, y: minion.y,
+                        vx: 0, vy: 0, life: 3,
+                        color: this.weapon.color || '#ffffff', size: 10
+                    });
+                }, 30);
+
+                hitEffects.push({ x: minionX, y: minionY, radius: 5, maxRadius: 30, color: '#aa00ff' });
+            }
+
+            customLightning() {
+                const target = this.findNearestEnemy();
+                if (target) {
+                    target.takeDamage(this.weapon.damage * 2, this);
+                    target.stunned = 30;
+
+                    // Lightning effect
+                    const dx = target.x - this.x;
+                    const dy = target.y - this.y;
+                    const dist = Math.hypot(dx, dy);
+                    for (let i = 0; i < dist; i += 10) {
+                        particles.push({
+                            x: this.x + (dx / dist) * i + (Math.random() - 0.5) * 15,
+                            y: this.y + (dy / dist) * i + (Math.random() - 0.5) * 15,
+                            vx: 0, vy: 0, life: 15,
+                            color: '#00ffff', size: 6
+                        });
+                    }
+                    hitEffects.push({ x: target.x, y: target.y, radius: 10, maxRadius: 50, color: '#00ffff' });
+                }
+            }
+
+            customPoison() {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < 80) {
+                            b.poisoned = true;
+                            b.poisonDamage = 3;
+                            b.poisonDuration = 180;
+                            b.poisonSource = this;
+                        }
+                    }
+                });
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 80, color: '#00ff00' });
+                for (let i = 0; i < 15; i++) {
+                    const angle = (i / 15) * Math.PI * 2;
+                    particles.push({
+                        x: this.x + Math.cos(angle) * 50,
+                        y: this.y + Math.sin(angle) * 50,
+                        vx: Math.cos(angle), vy: Math.sin(angle),
+                        life: 30, color: '#00ff00', size: 5
+                    });
+                }
+            }
+
+            customVampiric() {
+                this.vampiricActive = true;
+                this.vampiricTimer = 180;
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 40, color: '#8b0000' });
+                for (let i = 0; i < 12; i++) {
+                    particles.push({
+                        x: this.x + (Math.random() - 0.5) * 40,
+                        y: this.y + (Math.random() - 0.5) * 40,
+                        vx: 0, vy: -1,
+                        life: 25, color: '#8b0000', size: 5
+                    });
+                }
+            }
+
+            customClone() {
+                // Create a decoy clone
+                const cloneAngle = Math.random() * Math.PI * 2;
+                const cloneDist = 60;
+                const clone = {
+                    x: this.x + Math.cos(cloneAngle) * cloneDist,
+                    y: this.y + Math.sin(cloneAngle) * cloneDist,
+                    life: 180
+                };
+
+                const cloneInterval = setInterval(() => {
+                    if (!gameRunning || clone.life <= 0) {
+                        clearInterval(cloneInterval);
+                        return;
+                    }
+                    clone.life--;
+
+                    // Move randomly
+                    clone.x += (Math.random() - 0.5) * 4;
+                    clone.y += (Math.random() - 0.5) * 4;
+
+                    // Draw clone
+                    particles.push({
+                        x: clone.x, y: clone.y,
+                        vx: 0, vy: 0, life: 3,
+                        color: this.weapon.color || '#aaaaaa', size: this.weapon.length * 0.8
+                    });
+                }, 30);
+
+                hitEffects.push({ x: clone.x, y: clone.y, radius: 5, maxRadius: 30, color: '#aaaaaa' });
+            }
+
+            customExplosion() {
+                balls.forEach(b => {
+                    if (b !== this && b.alive && !this.isTeammate(b)) {
+                        const dist = Math.hypot(b.x - this.x, b.y - this.y);
+                        if (dist < 150) {
+                            const damage = this.weapon.damage * (1.5 - dist / 200);
+                            b.takeDamage(damage, this);
+                            const angle = Math.atan2(b.y - this.y, b.x - this.x);
+                            b.vx += Math.cos(angle) * 10;
+                            b.vy += Math.sin(angle) * 10;
+                        }
+                    }
+                });
+
+                // Big explosion effect
+                for (let i = 0; i < 30; i++) {
+                    const angle = (i / 30) * Math.PI * 2;
+                    particles.push({
+                        x: this.x, y: this.y,
+                        vx: Math.cos(angle) * 12, vy: Math.sin(angle) * 12,
+                        life: 35, color: i % 2 === 0 ? '#ff4500' : '#ffff00', size: 10
+                    });
+                }
+                hitEffects.push({ x: this.x, y: this.y, radius: 10, maxRadius: 150, color: '#ff4500' });
             }
 
             // === CASINO BALL ABILITIES ===
@@ -17994,6 +20136,2168 @@
                 requestAnimationFrame(gameLoop);
             }
         }
+
+        // ============================================
+        // CUSTOM BALL STUDIO - CANVAS DRAWING SYSTEM
+        // ============================================
+
+        let customBalls = [];
+        let selectedCustomAbilities = [];
+
+        // Drawing state
+        let drawingCanvas, drawingCtx;
+        let isDrawing = false;
+        let currentTool = 'pen';
+        let currentColor = '#ff6b35';
+        let brushSize = 8;
+        let lastX = 0, lastY = 0;
+        let undoStack = [];
+        let redoStack = [];
+        let shapeStartX = 0, shapeStartY = 0;
+        let placedStickers = [];
+
+        // Sticker definitions
+        const stickerCategories = {
+            eyes: ['👁️', '👀', '😊', '😎', '🤩', '😈', '🥺', '😐', '🔴', '⚫'],
+            mouths: ['👄', '😊', '😃', '😠', '😮', '🤐', '👅', '🦷', '〰️', '➖'],
+            hats: ['🎩', '👑', '🎓', '⛑️', '🧢', '🪖', '👒', '🎀', '📿', '💎'],
+            extras: ['⭐', '💥', '🔥', '❄️', '⚡', '💀', '🌟', '✨', '💫', '🌈', '🩸', '💧']
+        };
+
+        // Abilities
+        const customAbilityOptions = [
+            { id: 'dash', name: 'Dash', desc: 'Quick dash', icon: '💨' },
+            { id: 'shield', name: 'Shield', desc: 'Temp shield', icon: '🛡️' },
+            { id: 'heal', name: 'Heal', desc: 'Recover HP', icon: '💚' },
+            { id: 'fireball', name: 'Fireball', desc: 'Shoot fire', icon: '🔥' },
+            { id: 'freeze', name: 'Freeze', desc: 'Slow enemies', icon: '❄️' },
+            { id: 'slam', name: 'Slam', desc: 'AoE damage', icon: '💥' },
+            { id: 'speed', name: 'Speed', desc: 'Speed up', icon: '⚡' },
+            { id: 'rage', name: 'Rage', desc: 'More damage', icon: '😤' },
+            { id: 'teleport', name: 'Teleport', desc: 'Blink away', icon: '✨' },
+            { id: 'lightning', name: 'Lightning', desc: 'Zap enemy', icon: '⚡' },
+            { id: 'explosion', name: 'Explode', desc: 'Big boom', icon: '💣' },
+            { id: 'vampiric', name: 'Vampire', desc: 'Lifesteal', icon: '🧛' }
+        ];
+
+        function toggleCustomBallPanel() {
+            const panel = document.getElementById('customBallPanel');
+            panel.classList.toggle('active');
+            if (panel.classList.contains('active')) {
+                initDrawingCanvas();
+                populateAbilityGrid();
+                showStickerCategory('eyes');
+                renderSavedBalls();
+                updateLivePreview();
+            }
+        }
+
+        function initDrawingCanvas() {
+            drawingCanvas = document.getElementById('drawingCanvas');
+            if (!drawingCanvas) return;
+            drawingCtx = drawingCanvas.getContext('2d');
+
+            // Fill with base color
+            drawingCtx.fillStyle = '#3a3a5a';
+            drawingCtx.beginPath();
+            drawingCtx.arc(100, 100, 100, 0, Math.PI * 2);
+            drawingCtx.fill();
+
+            // Save initial state
+            saveToUndo();
+
+            // Mouse events
+            drawingCanvas.addEventListener('mousedown', startDrawing);
+            drawingCanvas.addEventListener('mousemove', draw);
+            drawingCanvas.addEventListener('mouseup', stopDrawing);
+            drawingCanvas.addEventListener('mouseout', stopDrawing);
+
+            // Touch events
+            drawingCanvas.addEventListener('touchstart', handleTouchStart);
+            drawingCanvas.addEventListener('touchmove', handleTouchMove);
+            drawingCanvas.addEventListener('touchend', stopDrawing);
+        }
+
+        function handleTouchStart(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = drawingCanvas.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            startDrawingAt(x, y);
+        }
+
+        function handleTouchMove(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = drawingCanvas.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            drawAt(x, y);
+        }
+
+        function startDrawing(e) {
+            const rect = drawingCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            startDrawingAt(x, y);
+        }
+
+        function startDrawingAt(x, y) {
+            isDrawing = true;
+            lastX = x;
+            lastY = y;
+            shapeStartX = x;
+            shapeStartY = y;
+
+            if (currentTool === 'fill') {
+                floodFill(Math.floor(x), Math.floor(y), currentColor);
+                saveToUndo();
+                updateLivePreview();
+            }
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = drawingCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            drawAt(x, y);
+        }
+
+        function drawAt(x, y) {
+            if (!isDrawing) return;
+
+            if (currentTool === 'pen' || currentTool === 'brush') {
+                drawingCtx.beginPath();
+                drawingCtx.moveTo(lastX, lastY);
+                drawingCtx.lineTo(x, y);
+                drawingCtx.strokeStyle = currentColor;
+                drawingCtx.lineWidth = currentTool === 'brush' ? brushSize * 2 : brushSize;
+                drawingCtx.lineCap = 'round';
+                drawingCtx.lineJoin = 'round';
+                drawingCtx.stroke();
+                lastX = x;
+                lastY = y;
+            } else if (currentTool === 'eraser') {
+                drawingCtx.beginPath();
+                drawingCtx.moveTo(lastX, lastY);
+                drawingCtx.lineTo(x, y);
+                drawingCtx.strokeStyle = '#3a3a5a';
+                drawingCtx.lineWidth = brushSize * 2;
+                drawingCtx.lineCap = 'round';
+                drawingCtx.stroke();
+                lastX = x;
+                lastY = y;
+            }
+
+            updateLivePreview();
+        }
+
+        function stopDrawing() {
+            if (!isDrawing) return;
+
+            if (['circle', 'rect', 'triangle', 'star', 'line'].includes(currentTool)) {
+                drawShape(currentTool, shapeStartX, shapeStartY, lastX, lastY);
+            }
+
+            if (isDrawing) {
+                saveToUndo();
+            }
+            isDrawing = false;
+            updateLivePreview();
+        }
+
+        function drawShape(shape, x1, y1, x2, y2) {
+            const cx = (x1 + x2) / 2;
+            const cy = (y1 + y2) / 2;
+            const w = Math.abs(x2 - x1);
+            const h = Math.abs(y2 - y1);
+            const r = Math.max(w, h) / 2;
+
+            drawingCtx.fillStyle = currentColor;
+            drawingCtx.strokeStyle = currentColor;
+            drawingCtx.lineWidth = brushSize;
+
+            switch(shape) {
+                case 'circle':
+                    drawingCtx.beginPath();
+                    drawingCtx.arc(cx, cy, r, 0, Math.PI * 2);
+                    drawingCtx.fill();
+                    break;
+                case 'rect':
+                    drawingCtx.fillRect(Math.min(x1, x2), Math.min(y1, y2), w, h);
+                    break;
+                case 'triangle':
+                    drawingCtx.beginPath();
+                    drawingCtx.moveTo(cx, Math.min(y1, y2));
+                    drawingCtx.lineTo(Math.min(x1, x2), Math.max(y1, y2));
+                    drawingCtx.lineTo(Math.max(x1, x2), Math.max(y1, y2));
+                    drawingCtx.closePath();
+                    drawingCtx.fill();
+                    break;
+                case 'star':
+                    drawingCtx.beginPath();
+                    for (let i = 0; i < 10; i++) {
+                        const radius = i % 2 === 0 ? r : r * 0.5;
+                        const angle = (i * Math.PI / 5) - Math.PI / 2;
+                        if (i === 0) drawingCtx.moveTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                        else drawingCtx.lineTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                    }
+                    drawingCtx.closePath();
+                    drawingCtx.fill();
+                    break;
+                case 'line':
+                    drawingCtx.beginPath();
+                    drawingCtx.moveTo(x1, y1);
+                    drawingCtx.lineTo(x2, y2);
+                    drawingCtx.stroke();
+                    break;
+            }
+        }
+
+        function floodFill(startX, startY, fillColor) {
+            const imageData = drawingCtx.getImageData(0, 0, 200, 200);
+            const data = imageData.data;
+            const startIdx = (startY * 200 + startX) * 4;
+            const startR = data[startIdx], startG = data[startIdx + 1], startB = data[startIdx + 2];
+
+            // Parse fill color
+            const fill = hexToRgb(fillColor);
+            if (!fill) return;
+
+            // Don't fill if same color
+            if (startR === fill.r && startG === fill.g && startB === fill.b) return;
+
+            const stack = [[startX, startY]];
+            const visited = new Set();
+
+            while (stack.length > 0 && stack.length < 50000) {
+                const [x, y] = stack.pop();
+                const key = `${x},${y}`;
+
+                if (x < 0 || x >= 200 || y < 0 || y >= 200 || visited.has(key)) continue;
+
+                const idx = (y * 200 + x) * 4;
+                if (Math.abs(data[idx] - startR) > 30 || Math.abs(data[idx + 1] - startG) > 30 || Math.abs(data[idx + 2] - startB) > 30) continue;
+
+                visited.add(key);
+                data[idx] = fill.r;
+                data[idx + 1] = fill.g;
+                data[idx + 2] = fill.b;
+                data[idx + 3] = 255;
+
+                stack.push([x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]);
+            }
+
+            drawingCtx.putImageData(imageData, 0, 0);
+        }
+
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        function setDrawTool(tool) {
+            currentTool = tool;
+            document.querySelectorAll('.tool-btn').forEach(btn => btn.classList.remove('active'));
+            const toolBtn = document.getElementById('tool' + tool.charAt(0).toUpperCase() + tool.slice(1));
+            if (toolBtn) toolBtn.classList.add('active');
+        }
+
+        function setDrawColor(color) {
+            currentColor = color;
+            document.getElementById('drawColor').value = color;
+            updateBrushPreview();
+        }
+
+        function updateBrushSize() {
+            brushSize = parseInt(document.getElementById('brushSize').value);
+            document.getElementById('brushSizeVal').textContent = brushSize;
+            updateBrushPreview();
+        }
+
+        function updateBrushPreview() {
+            const preview = document.getElementById('brushPreview');
+            if (preview) {
+                preview.style.width = brushSize + 'px';
+                preview.style.height = brushSize + 'px';
+                preview.style.background = currentColor;
+            }
+        }
+
+        function saveToUndo() {
+            if (!drawingCanvas) return;
+            undoStack.push(drawingCanvas.toDataURL());
+            if (undoStack.length > 30) undoStack.shift();
+            redoStack = [];
+        }
+
+        function undoDrawing() {
+            if (undoStack.length <= 1) return;
+            redoStack.push(undoStack.pop());
+            const img = new Image();
+            img.onload = () => {
+                drawingCtx.clearRect(0, 0, 200, 200);
+                drawingCtx.drawImage(img, 0, 0);
+                updateLivePreview();
+            };
+            img.src = undoStack[undoStack.length - 1];
+        }
+
+        function redoDrawing() {
+            if (redoStack.length === 0) return;
+            const dataUrl = redoStack.pop();
+            undoStack.push(dataUrl);
+            const img = new Image();
+            img.onload = () => {
+                drawingCtx.clearRect(0, 0, 200, 200);
+                drawingCtx.drawImage(img, 0, 0);
+                updateLivePreview();
+            };
+            img.src = dataUrl;
+        }
+
+        function clearCanvas() {
+            if (!drawingCtx) return;
+            drawingCtx.fillStyle = '#3a3a5a';
+            drawingCtx.beginPath();
+            drawingCtx.arc(100, 100, 100, 0, Math.PI * 2);
+            drawingCtx.fill();
+            placedStickers = [];
+            saveToUndo();
+            updateLivePreview();
+        }
+
+        function showStickerCategory(category) {
+            const grid = document.getElementById('stickerGrid');
+            if (!grid) return;
+
+            document.querySelectorAll('.sticker-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            grid.innerHTML = '';
+            const stickers = stickerCategories[category] || [];
+            stickers.forEach(sticker => {
+                const div = document.createElement('div');
+                div.className = 'sticker-item';
+                div.textContent = sticker;
+                div.draggable = true;
+                div.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', sticker);
+                });
+                div.addEventListener('click', () => {
+                    // Draw sticker at center
+                    drawStickerOnCanvas(sticker, 100, 100);
+                });
+                grid.appendChild(div);
+            });
+        }
+
+        function drawStickerOnCanvas(sticker, x, y) {
+            if (!drawingCtx) return;
+            drawingCtx.font = '30px Arial';
+            drawingCtx.textAlign = 'center';
+            drawingCtx.textBaseline = 'middle';
+            drawingCtx.fillText(sticker, x, y);
+            placedStickers.push({ sticker, x, y });
+            saveToUndo();
+            updateLivePreview();
+        }
+
+        // Setup drag and drop on canvas
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const canvas = document.getElementById('drawingCanvas');
+                if (canvas) {
+                    canvas.addEventListener('dragover', (e) => e.preventDefault());
+                    canvas.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        const sticker = e.dataTransfer.getData('text/plain');
+                        const rect = canvas.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        drawStickerOnCanvas(sticker, x, y);
+                    });
+                }
+
+                // Color picker change
+                const colorPicker = document.getElementById('drawColor');
+                if (colorPicker) {
+                    colorPicker.addEventListener('input', (e) => {
+                        currentColor = e.target.value;
+                        updateBrushPreview();
+                    });
+                }
+            }, 100);
+        });
+
+        function updateLivePreview() {
+            const preview = document.getElementById('customBallPreview');
+            if (!preview || !drawingCanvas) return;
+            const previewCtx = preview.getContext('2d');
+
+            // Clear and draw scaled version
+            previewCtx.clearRect(0, 0, 100, 100);
+            previewCtx.drawImage(drawingCanvas, 0, 0, 200, 200, 0, 0, 100, 100);
+        }
+
+        function updateStatsDisplay() {
+            const damage = document.getElementById('customBallDamage').value;
+            const speed = document.getElementById('customBallSpeed').value;
+            const size = document.getElementById('customBallSize').value;
+
+            document.getElementById('damageVal').textContent = damage;
+            document.getElementById('speedVal').textContent = speed;
+            document.getElementById('sizeVal').textContent = size;
+        }
+
+        function populateAbilityGrid() {
+            const grid = document.getElementById('abilitySelectGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            customAbilityOptions.forEach(ability => {
+                const isSelected = selectedCustomAbilities.includes(ability.id);
+                const div = document.createElement('div');
+                div.className = `ability-option ${isSelected ? 'selected' : ''}`;
+                div.innerHTML = `
+                    <span class="ability-icon">${ability.icon}</span>
+                    <span class="ability-name">${ability.name}</span>
+                `;
+                div.onclick = () => toggleAbilitySelection(ability.id);
+                grid.appendChild(div);
+            });
+        }
+
+        function toggleAbilitySelection(abilityId) {
+            const index = selectedCustomAbilities.indexOf(abilityId);
+            if (index > -1) {
+                selectedCustomAbilities.splice(index, 1);
+            } else if (selectedCustomAbilities.length < 4) {
+                selectedCustomAbilities.push(abilityId);
+            }
+            populateAbilityGrid();
+            updateSelectedAbilitySlots();
+        }
+
+        // ============================================
+        // ABILITY CREATOR SYSTEM
+        // ============================================
+
+        let customAbilityLibrary = [];
+        let selectedAbilityIcon = '💥';
+
+        // Effect type descriptions
+        const effectDescriptions = {
+            damage_aoe: 'AoE Damage',
+            damage_single: 'Single Target',
+            damage_dot: 'DoT',
+            damage_execute: 'Execute',
+            projectile_single: 'Projectile',
+            projectile_burst: 'Burst Shot',
+            projectile_spray: 'Spray Shot',
+            projectile_homing: 'Homing',
+            projectile_boomerang: 'Boomerang',
+            projectile_orbit: 'Orbit',
+            shield_normal: 'Shield',
+            shield_reflect: 'Reflect',
+            shield_absorb: 'Absorb',
+            invuln: 'Invuln',
+            heal_instant: 'Heal',
+            heal_over_time: 'Regen',
+            lifesteal: 'Lifesteal',
+            dash: 'Dash',
+            teleport: 'Teleport',
+            blink_strike: 'Blink Strike',
+            speed_boost: 'Speed Up',
+            phase: 'Phase',
+            stun: 'Stun',
+            slow: 'Slow',
+            freeze: 'Freeze',
+            knockback: 'Knockback',
+            pull: 'Pull',
+            confuse: 'Confuse',
+            buff_damage: 'DMG Boost',
+            buff_speed: 'SPD Boost',
+            buff_size: 'Size Change',
+            buff_crit: 'Crit Boost',
+            rage: 'Rage',
+            summon_clone: 'Clone',
+            summon_turret: 'Turret',
+            summon_trap: 'Trap',
+            summon_minions: 'Minions',
+            time_slow: 'Time Slow',
+            gravity_well: 'Gravity',
+            swap: 'Swap',
+            copy: 'Copy',
+            explode_death: 'Death Explode'
+        };
+
+        // Show/hide ability tabs
+        function showAbilityTab(tabName) {
+            document.querySelectorAll('.ability-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.ability-tab-content').forEach(c => c.classList.remove('active'));
+
+            event.target.classList.add('active');
+            document.getElementById(tabName + 'Tab').classList.add('active');
+
+            if (tabName === 'library') {
+                renderAbilityLibrary();
+            }
+        }
+
+        // Toggle secondary effect section
+        function toggleSecondaryEffect() {
+            const content = document.getElementById('secondaryEffectContent');
+            const arrow = document.getElementById('secondaryArrow');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.classList.add('open');
+            } else {
+                content.style.display = 'none';
+                arrow.classList.remove('open');
+            }
+        }
+
+        // Icon picker handler
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const iconPicker = document.getElementById('abilityIconPicker');
+                if (iconPicker) {
+                    iconPicker.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('icon-option')) {
+                            iconPicker.querySelectorAll('.icon-option').forEach(i => i.classList.remove('selected'));
+                            e.target.classList.add('selected');
+                            selectedAbilityIcon = e.target.dataset.icon;
+                            updateAbilityPreview();
+                        }
+                    });
+                }
+
+                // Add change listeners to all ability creator inputs
+                const inputs = ['primaryEffectType', 'primaryPower', 'primaryRange', 'primaryDuration',
+                               'abilityCooldown', 'abilityTrigger', 'secondaryEffectType', 'secondaryPower',
+                               'secondaryDelay', 'newAbilityName', 'abilityColor'];
+                inputs.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.addEventListener('input', updateAbilityPreview);
+                        el.addEventListener('change', updateAbilityPreview);
+                    }
+                });
+
+                // Modifier checkboxes
+                ['modPiercing', 'modExplosive', 'modChain', 'modVampire', 'modCrit', 'modSilence', 'modBurn', 'modPoison'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.addEventListener('change', updateAbilityPreview);
+                });
+
+                loadAbilityLibrary();
+            }, 200);
+        });
+
+        // Update ability preview
+        function updateAbilityPreview() {
+            const name = document.getElementById('newAbilityName')?.value || 'My Ability';
+            const effectType = document.getElementById('primaryEffectType')?.value || 'damage_aoe';
+            const power = document.getElementById('primaryPower')?.value || 50;
+            const range = document.getElementById('primaryRange')?.value || 150;
+            const duration = document.getElementById('primaryDuration')?.value || 1;
+            const cooldown = document.getElementById('abilityCooldown')?.value || 3;
+
+            // Update value displays
+            document.getElementById('primaryPowerVal').textContent = power;
+            document.getElementById('primaryRangeVal').textContent = range;
+            document.getElementById('primaryDurationVal').textContent = duration;
+            document.getElementById('abilityCooldownVal').textContent = cooldown;
+
+            const secondaryPower = document.getElementById('secondaryPower')?.value || 25;
+            const secondaryDelay = document.getElementById('secondaryDelay')?.value || 0;
+            document.getElementById('secondaryPowerVal').textContent = secondaryPower;
+            document.getElementById('secondaryDelayVal').textContent = secondaryDelay;
+
+            // Update preview display
+            document.getElementById('previewAbilityIcon').textContent = selectedAbilityIcon;
+            document.getElementById('previewAbilityName').textContent = name;
+
+            const desc = effectDescriptions[effectType] || effectType;
+            document.getElementById('previewAbilityDesc').textContent = `${desc}: ${power} power`;
+
+            // Stats
+            const statsContainer = document.querySelector('.preview-stats');
+            statsContainer.innerHTML = `
+                <span class="stat-pill">Range: ${range}</span>
+                <span class="stat-pill">CD: ${cooldown}s</span>
+                <span class="stat-pill">Dur: ${duration}s</span>
+            `;
+
+            // Modifiers
+            const mods = [];
+            if (document.getElementById('modPiercing')?.checked) mods.push('Piercing');
+            if (document.getElementById('modExplosive')?.checked) mods.push('Explosive');
+            if (document.getElementById('modChain')?.checked) mods.push('Chain');
+            if (document.getElementById('modVampire')?.checked) mods.push('Vampiric');
+            if (document.getElementById('modCrit')?.checked) mods.push('Crit+');
+            if (document.getElementById('modSilence')?.checked) mods.push('Silence');
+            if (document.getElementById('modBurn')?.checked) mods.push('Burn');
+            if (document.getElementById('modPoison')?.checked) mods.push('Poison');
+
+            const modsContainer = document.getElementById('previewModifiers');
+            modsContainer.innerHTML = mods.map(m => `<span class="mod-tag">${m}</span>`).join('');
+
+            // Calculate cost
+            const cost = calculateAbilityCost();
+            document.getElementById('abilityCostValue').textContent = cost;
+        }
+
+        // Calculate ability cost based on power
+        function calculateAbilityCost() {
+            let cost = 10;
+            const power = parseInt(document.getElementById('primaryPower')?.value) || 50;
+            const range = parseInt(document.getElementById('primaryRange')?.value) || 150;
+            const cooldown = parseInt(document.getElementById('abilityCooldown')?.value) || 3;
+
+            cost += Math.floor(power / 10) * 5;
+            cost += Math.floor(range / 50) * 3;
+            cost -= Math.floor(cooldown) * 2;
+
+            // Modifier costs
+            if (document.getElementById('modPiercing')?.checked) cost += 15;
+            if (document.getElementById('modExplosive')?.checked) cost += 20;
+            if (document.getElementById('modChain')?.checked) cost += 25;
+            if (document.getElementById('modVampire')?.checked) cost += 30;
+            if (document.getElementById('modCrit')?.checked) cost += 15;
+            if (document.getElementById('modSilence')?.checked) cost += 20;
+            if (document.getElementById('modBurn')?.checked) cost += 15;
+            if (document.getElementById('modPoison')?.checked) cost += 15;
+
+            // Secondary effect
+            if (document.getElementById('secondaryEffectType')?.value !== 'none') {
+                cost += 20;
+            }
+
+            return Math.max(10, cost);
+        }
+
+        // Create custom ability
+        function createCustomAbility() {
+            const name = document.getElementById('newAbilityName')?.value?.trim() || 'Custom Ability';
+            const effectType = document.getElementById('primaryEffectType')?.value;
+            const power = parseInt(document.getElementById('primaryPower')?.value) || 50;
+            const range = parseInt(document.getElementById('primaryRange')?.value) || 150;
+            const duration = parseFloat(document.getElementById('primaryDuration')?.value) || 1;
+            const cooldown = parseInt(document.getElementById('abilityCooldown')?.value) || 3;
+            const trigger = document.getElementById('abilityTrigger')?.value || 'active';
+            const color = document.getElementById('abilityColor')?.value || '#ff6b35';
+
+            const modifiers = {
+                piercing: document.getElementById('modPiercing')?.checked,
+                explosive: document.getElementById('modExplosive')?.checked,
+                chain: document.getElementById('modChain')?.checked,
+                vampire: document.getElementById('modVampire')?.checked,
+                crit: document.getElementById('modCrit')?.checked,
+                silence: document.getElementById('modSilence')?.checked,
+                burn: document.getElementById('modBurn')?.checked,
+                poison: document.getElementById('modPoison')?.checked
+            };
+
+            const secondaryEffect = {
+                type: document.getElementById('secondaryEffectType')?.value || 'none',
+                power: parseInt(document.getElementById('secondaryPower')?.value) || 25,
+                delay: parseFloat(document.getElementById('secondaryDelay')?.value) || 0
+            };
+
+            const ability = {
+                id: 'custom_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+                name: name,
+                icon: selectedAbilityIcon,
+                effectType: effectType,
+                power: power,
+                range: range,
+                duration: duration,
+                cooldown: cooldown,
+                trigger: trigger,
+                color: color,
+                modifiers: modifiers,
+                secondaryEffect: secondaryEffect,
+                desc: `${effectDescriptions[effectType]}: ${power}`,
+                isCustom: true,
+                cost: calculateAbilityCost()
+            };
+
+            // Add to library
+            customAbilityLibrary.push(ability);
+            saveAbilityLibrary();
+
+            // Add to the available abilities list
+            customAbilityOptions.push(ability);
+
+            // Show success feedback
+            alert(`Ability "${name}" created and added to your library!`);
+
+            // Switch to library tab
+            showAbilityTabDirect('library');
+            renderAbilityLibrary();
+            populateAbilityGrid();
+        }
+
+        function showAbilityTabDirect(tabName) {
+            document.querySelectorAll('.ability-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.ability-tab-content').forEach(c => c.classList.remove('active'));
+
+            document.querySelector(`.ability-tab:nth-child(${tabName === 'presets' ? 1 : tabName === 'creator' ? 2 : 3})`).classList.add('active');
+            document.getElementById(tabName + 'Tab').classList.add('active');
+        }
+
+        // Render ability library
+        function renderAbilityLibrary() {
+            const container = document.getElementById('customAbilityLibrary');
+            if (!container) return;
+
+            if (customAbilityLibrary.length === 0) {
+                container.innerHTML = '<div class="empty-library">No custom abilities yet. Create one in the Creator tab!</div>';
+                return;
+            }
+
+            container.innerHTML = customAbilityLibrary.map((ability, idx) => `
+                <div class="ability-option custom ${selectedCustomAbilities.includes(ability.id) ? 'selected' : ''}"
+                     onclick="toggleAbilitySelection('${ability.id}')"
+                     style="border-color: ${ability.color}">
+                    <span class="ability-icon">${ability.icon}</span>
+                    <span class="ability-name">${ability.name}</span>
+                    <button class="delete-ability-btn" onclick="event.stopPropagation(); deleteCustomAbilityFromLibrary(${idx})">×</button>
+                </div>
+            `).join('');
+        }
+
+        // Delete custom ability from library
+        function deleteCustomAbilityFromLibrary(index) {
+            const ability = customAbilityLibrary[index];
+            if (!ability) return;
+
+            if (confirm(`Delete "${ability.name}"?`)) {
+                // Remove from selected
+                const selIdx = selectedCustomAbilities.indexOf(ability.id);
+                if (selIdx > -1) selectedCustomAbilities.splice(selIdx, 1);
+
+                // Remove from options
+                const optIdx = customAbilityOptions.findIndex(a => a.id === ability.id);
+                if (optIdx > -1) customAbilityOptions.splice(optIdx, 1);
+
+                // Remove from library
+                customAbilityLibrary.splice(index, 1);
+                saveAbilityLibrary();
+                renderAbilityLibrary();
+                populateAbilityGrid();
+                updateSelectedAbilitySlots();
+            }
+        }
+
+        // Clear all custom abilities
+        function clearAbilityLibrary() {
+            if (customAbilityLibrary.length === 0) return;
+            if (confirm('Delete all custom abilities?')) {
+                // Remove all from selected and options
+                customAbilityLibrary.forEach(ability => {
+                    const selIdx = selectedCustomAbilities.indexOf(ability.id);
+                    if (selIdx > -1) selectedCustomAbilities.splice(selIdx, 1);
+                    const optIdx = customAbilityOptions.findIndex(a => a.id === ability.id);
+                    if (optIdx > -1) customAbilityOptions.splice(optIdx, 1);
+                });
+
+                customAbilityLibrary = [];
+                saveAbilityLibrary();
+                renderAbilityLibrary();
+                populateAbilityGrid();
+                updateSelectedAbilitySlots();
+            }
+        }
+
+        // Save/Load ability library
+        function saveAbilityLibrary() {
+            try {
+                const data = JSON.stringify(customAbilityLibrary);
+                if (isLocalStorageAvailable()) {
+                    localStorage.setItem('weaponball_abilityLibrary', data);
+                }
+            } catch (e) {
+                console.error('Failed to save ability library', e);
+            }
+        }
+
+        function loadAbilityLibrary() {
+            try {
+                if (isLocalStorageAvailable()) {
+                    const data = localStorage.getItem('weaponball_abilityLibrary');
+                    if (data) {
+                        customAbilityLibrary = JSON.parse(data);
+                        // Re-add to options
+                        customAbilityLibrary.forEach(ability => {
+                            if (!customAbilityOptions.find(a => a.id === ability.id)) {
+                                customAbilityOptions.push(ability);
+                            }
+                        });
+                    }
+                }
+            } catch (e) {
+                console.error('Failed to load ability library', e);
+                customAbilityLibrary = [];
+            }
+        }
+
+        // Update selected ability slots display
+        function updateSelectedAbilitySlots() {
+            const slotsContainer = document.getElementById('selectedAbilitySlots');
+            if (!slotsContainer) return;
+
+            const slots = slotsContainer.querySelectorAll('.ability-slot');
+            slots.forEach((slot, idx) => {
+                if (selectedCustomAbilities[idx]) {
+                    const abilityId = selectedCustomAbilities[idx];
+                    const ability = customAbilityOptions.find(a => a.id === abilityId);
+                    if (ability) {
+                        slot.className = 'ability-slot filled';
+                        slot.innerHTML = `
+                            <span class="slot-icon">${ability.icon}</span>
+                            <span class="slot-name">${ability.name}</span>
+                            <button class="remove-slot" onclick="removeFromSlot(${idx})">×</button>
+                        `;
+                    }
+                } else {
+                    slot.className = 'ability-slot empty';
+                    slot.innerHTML = (idx + 1).toString();
+                }
+            });
+
+            // Update count
+            const countEl = document.getElementById('selectedCount');
+            if (countEl) countEl.textContent = selectedCustomAbilities.length;
+        }
+
+        function removeFromSlot(index) {
+            if (selectedCustomAbilities[index]) {
+                selectedCustomAbilities.splice(index, 1);
+                populateAbilityGrid();
+                updateSelectedAbilitySlots();
+                renderAbilityLibrary();
+            }
+        }
+
+        function getDrawnBallConfig() {
+            const imageData = drawingCanvas ? drawingCanvas.toDataURL('image/png') : '';
+            return {
+                name: document.getElementById('customBallName').value || 'Custom Ball',
+                imageData: imageData,
+                damage: parseInt(document.getElementById('customBallDamage').value) || 25,
+                speed: parseFloat(document.getElementById('customBallSpeed').value) || 1.0,
+                size: parseFloat(document.getElementById('customBallSize').value) || 1.0,
+                abilities: [...selectedCustomAbilities],
+                isDrawn: true
+            };
+        }
+
+        // Keep old config function for compatibility - now just calls drawn ball config
+        function getCustomBallConfig() {
+            return getDrawnBallConfig();
+        }
+
+        function updateCustomBallPreview() {
+            updateLivePreview();
+        }
+
+        function drawCustomShape(ctx, cx, cy, size, config) {
+            const gradient = ctx.createRadialGradient(cx - size/3, cy - size/3, 0, cx, cy, size);
+            gradient.addColorStop(0, config.color1);
+            gradient.addColorStop(1, config.color2);
+
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+
+            switch (config.shape) {
+                case 'circle':
+                    ctx.arc(cx, cy, size, 0, Math.PI * 2);
+                    break;
+                case 'square':
+                    ctx.save();
+                    ctx.translate(cx, cy);
+                    ctx.rotate(Math.PI / 4);
+                    ctx.rect(-size * 0.7, -size * 0.7, size * 1.4, size * 1.4);
+                    ctx.restore();
+                    break;
+                case 'star':
+                    drawStar(ctx, cx, cy, 5, size, size * 0.5);
+                    break;
+                case 'spiky':
+                    drawStar(ctx, cx, cy, 12, size, size * 0.7);
+                    break;
+                case 'hexagon':
+                    drawPolygon(ctx, cx, cy, size, 6);
+                    break;
+            }
+
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        function drawStar(ctx, cx, cy, points, outerRadius, innerRadius) {
+            ctx.beginPath();
+            for (let i = 0; i < points * 2; i++) {
+                const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                const angle = (i * Math.PI / points) - Math.PI / 2;
+                if (i === 0) {
+                    ctx.moveTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                } else {
+                    ctx.lineTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                }
+            }
+            ctx.closePath();
+        }
+
+        function drawPolygon(ctx, cx, cy, radius, sides) {
+            ctx.beginPath();
+            for (let i = 0; i < sides; i++) {
+                const angle = (i * 2 * Math.PI / sides) - Math.PI / 2;
+                if (i === 0) {
+                    ctx.moveTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                } else {
+                    ctx.lineTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                }
+            }
+            ctx.closePath();
+        }
+
+        function drawCustomFace(ctx, cx, cy, size, config) {
+            ctx.fillStyle = config.eyeColor;
+
+            switch (config.face) {
+                case 'normal':
+                    // Two eyes
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.arc(cx + size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Pupils
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.35, cy - size * 0.1, size * 0.12, 0, Math.PI * 2);
+                    ctx.arc(cx + size * 0.45, cy - size * 0.1, size * 0.12, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Smile
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + size * 0.2, size * 0.3, 0.1 * Math.PI, 0.9 * Math.PI);
+                    ctx.stroke();
+                    break;
+
+                case 'angry':
+                    // Angry eyes
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.arc(cx + size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.35, cy - size * 0.05, size * 0.12, 0, Math.PI * 2);
+                    ctx.arc(cx + size * 0.45, cy - size * 0.05, size * 0.12, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Eyebrows
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(cx - size * 0.6, cy - size * 0.4);
+                    ctx.lineTo(cx - size * 0.2, cy - size * 0.25);
+                    ctx.moveTo(cx + size * 0.6, cy - size * 0.4);
+                    ctx.lineTo(cx + size * 0.2, cy - size * 0.25);
+                    ctx.stroke();
+                    // Frown
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + size * 0.5, size * 0.3, 1.1 * Math.PI, 1.9 * Math.PI);
+                    ctx.stroke();
+                    break;
+
+                case 'happy':
+                    // Closed happy eyes
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.4, cy - size * 0.1, size * 0.2, 1.1 * Math.PI, 1.9 * Math.PI);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.4, cy - size * 0.1, size * 0.2, 1.1 * Math.PI, 1.9 * Math.PI);
+                    ctx.stroke();
+                    // Big smile
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + size * 0.1, size * 0.4, 0, Math.PI);
+                    ctx.stroke();
+                    break;
+
+                case 'cool':
+                    // Sunglasses
+                    ctx.fillStyle = '#000';
+                    ctx.fillRect(cx - size * 0.7, cy - size * 0.25, size * 0.5, size * 0.35);
+                    ctx.fillRect(cx + size * 0.2, cy - size * 0.25, size * 0.5, size * 0.35);
+                    ctx.fillRect(cx - size * 0.2, cy - size * 0.15, size * 0.4, size * 0.08);
+                    // Smirk
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(cx - size * 0.2, cy + size * 0.3);
+                    ctx.quadraticCurveTo(cx + size * 0.2, cy + size * 0.4, cx + size * 0.4, cy + size * 0.25);
+                    ctx.stroke();
+                    break;
+
+                case 'cyclops':
+                    // One big eye
+                    ctx.beginPath();
+                    ctx.arc(cx, cy - size * 0.05, size * 0.4, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(cx, cy - size * 0.05, size * 0.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#fff';
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.08, cy - size * 0.12, size * 0.08, 0, Math.PI * 2);
+                    ctx.fill();
+                    break;
+
+                case 'robot':
+                    // Square eyes with glow
+                    ctx.fillStyle = '#00ffff';
+                    ctx.shadowColor = '#00ffff';
+                    ctx.shadowBlur = 10;
+                    ctx.fillRect(cx - size * 0.55, cy - size * 0.25, size * 0.35, size * 0.25);
+                    ctx.fillRect(cx + size * 0.2, cy - size * 0.25, size * 0.35, size * 0.25);
+                    ctx.shadowBlur = 0;
+                    // Mouth grid
+                    ctx.strokeStyle = '#00ffff';
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(cx - size * 0.3, cy + size * 0.15, size * 0.6, size * 0.25);
+                    for (let i = 0; i < 3; i++) {
+                        ctx.beginPath();
+                        ctx.moveTo(cx - size * 0.3 + (i + 1) * size * 0.15, cy + size * 0.15);
+                        ctx.lineTo(cx - size * 0.3 + (i + 1) * size * 0.15, cy + size * 0.4);
+                        ctx.stroke();
+                    }
+                    break;
+
+                case 'demon':
+                    // Glowing red eyes
+                    ctx.fillStyle = '#ff0000';
+                    ctx.shadowColor = '#ff0000';
+                    ctx.shadowBlur = 15;
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.35, cy - size * 0.1, size * 0.2, 0, Math.PI * 2);
+                    ctx.arc(cx + size * 0.35, cy - size * 0.1, size * 0.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                    // Fangs
+                    ctx.fillStyle = '#fff';
+                    ctx.beginPath();
+                    ctx.moveTo(cx - size * 0.2, cy + size * 0.2);
+                    ctx.lineTo(cx - size * 0.1, cy + size * 0.5);
+                    ctx.lineTo(cx, cy + size * 0.2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.moveTo(cx, cy + size * 0.2);
+                    ctx.lineTo(cx + size * 0.1, cy + size * 0.5);
+                    ctx.lineTo(cx + size * 0.2, cy + size * 0.2);
+                    ctx.fill();
+                    break;
+
+                case 'none':
+                    // No face
+                    break;
+            }
+        }
+
+        function drawCustomHat(ctx, cx, cy, hat, time) {
+            switch (hat) {
+                case 'tophat':
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.fillRect(cx - 25, cy - 5, 50, 10);
+                    ctx.fillRect(cx - 15, cy - 35, 30, 30);
+                    ctx.strokeStyle = '#gold';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 15, cy - 10);
+                    ctx.lineTo(cx + 15, cy - 10);
+                    ctx.stroke();
+                    break;
+
+                case 'crown':
+                    ctx.fillStyle = '#ffd700';
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 20, cy);
+                    ctx.lineTo(cx - 20, cy - 15);
+                    ctx.lineTo(cx - 12, cy - 8);
+                    ctx.lineTo(cx - 6, cy - 20);
+                    ctx.lineTo(cx, cy - 10);
+                    ctx.lineTo(cx + 6, cy - 20);
+                    ctx.lineTo(cx + 12, cy - 8);
+                    ctx.lineTo(cx + 20, cy - 15);
+                    ctx.lineTo(cx + 20, cy);
+                    ctx.closePath();
+                    ctx.fill();
+                    // Gems
+                    ctx.fillStyle = '#ff0000';
+                    ctx.beginPath();
+                    ctx.arc(cx, cy - 12, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                    break;
+
+                case 'halo':
+                    ctx.strokeStyle = '#ffff00';
+                    ctx.shadowColor = '#ffff00';
+                    ctx.shadowBlur = 15;
+                    ctx.lineWidth = 4;
+                    ctx.beginPath();
+                    ctx.ellipse(cx, cy - 10, 25, 8, 0, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.shadowBlur = 0;
+                    break;
+
+                case 'horns':
+                    ctx.fillStyle = '#8b0000';
+                    // Left horn
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 25, cy + 5);
+                    ctx.quadraticCurveTo(cx - 35, cy - 20, cx - 20, cy - 30);
+                    ctx.quadraticCurveTo(cx - 15, cy - 15, cx - 15, cy + 5);
+                    ctx.fill();
+                    // Right horn
+                    ctx.beginPath();
+                    ctx.moveTo(cx + 25, cy + 5);
+                    ctx.quadraticCurveTo(cx + 35, cy - 20, cx + 20, cy - 30);
+                    ctx.quadraticCurveTo(cx + 15, cy - 15, cx + 15, cy + 5);
+                    ctx.fill();
+                    break;
+
+                case 'cap':
+                    ctx.fillStyle = '#cc0000';
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + 5, 22, Math.PI, 0);
+                    ctx.fill();
+                    // Brim
+                    ctx.fillRect(cx - 5, cy, 30, 8);
+                    break;
+
+                case 'wizard':
+                    ctx.fillStyle = '#4a0080';
+                    ctx.beginPath();
+                    ctx.moveTo(cx, cy - 50);
+                    ctx.lineTo(cx - 25, cy + 5);
+                    ctx.lineTo(cx + 25, cy + 5);
+                    ctx.closePath();
+                    ctx.fill();
+                    // Stars
+                    ctx.fillStyle = '#ffd700';
+                    ctx.font = '10px Arial';
+                    ctx.fillText('★', cx - 8, cy - 15);
+                    ctx.fillText('☆', cx + 3, cy - 30);
+                    break;
+
+                case 'party':
+                    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
+                    ctx.beginPath();
+                    ctx.moveTo(cx, cy - 40);
+                    ctx.lineTo(cx - 20, cy + 5);
+                    ctx.lineTo(cx + 20, cy + 5);
+                    ctx.closePath();
+                    const hatGrad = ctx.createLinearGradient(cx - 20, cy, cx + 20, cy);
+                    colors.forEach((c, i) => hatGrad.addColorStop(i / (colors.length - 1), c));
+                    ctx.fillStyle = hatGrad;
+                    ctx.fill();
+                    // Pom pom
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(cx, cy - 40, 6, 0, Math.PI * 2);
+                    ctx.fill();
+                    break;
+            }
+        }
+
+        function drawCustomEffect(ctx, cx, cy, radius, effect, time) {
+            switch (effect) {
+                case 'fire':
+                    for (let i = 0; i < 8; i++) {
+                        const angle = (i / 8) * Math.PI * 2 + time * 2;
+                        const flicker = Math.sin(time * 10 + i) * 5;
+                        ctx.fillStyle = `rgba(255, ${100 + Math.random() * 100}, 0, 0.6)`;
+                        ctx.beginPath();
+                        ctx.arc(
+                            cx + Math.cos(angle) * (radius + flicker),
+                            cy + Math.sin(angle) * (radius + flicker),
+                            8 + Math.random() * 5, 0, Math.PI * 2
+                        );
+                        ctx.fill();
+                    }
+                    break;
+
+                case 'electric':
+                    ctx.strokeStyle = '#00ffff';
+                    ctx.shadowColor = '#00ffff';
+                    ctx.shadowBlur = 10;
+                    ctx.lineWidth = 2;
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i / 6) * Math.PI * 2 + time * 3;
+                        ctx.beginPath();
+                        ctx.moveTo(cx, cy);
+                        let x = cx, y = cy;
+                        for (let j = 0; j < 4; j++) {
+                            x += Math.cos(angle) * 15 + (Math.random() - 0.5) * 20;
+                            y += Math.sin(angle) * 15 + (Math.random() - 0.5) * 20;
+                            ctx.lineTo(x, y);
+                        }
+                        ctx.stroke();
+                    }
+                    ctx.shadowBlur = 0;
+                    break;
+
+                case 'sparkle':
+                    for (let i = 0; i < 10; i++) {
+                        const angle = (i / 10) * Math.PI * 2 + time;
+                        const dist = radius + Math.sin(time * 3 + i) * 10;
+                        const sparkleSize = 3 + Math.sin(time * 5 + i * 2) * 2;
+                        ctx.fillStyle = `rgba(255, 255, 100, ${0.5 + Math.sin(time * 4 + i) * 0.3})`;
+                        ctx.beginPath();
+                        ctx.arc(
+                            cx + Math.cos(angle) * dist,
+                            cy + Math.sin(angle) * dist,
+                            sparkleSize, 0, Math.PI * 2
+                        );
+                        ctx.fill();
+                    }
+                    break;
+
+                case 'shadow':
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+                    for (let i = 0; i < 5; i++) {
+                        const angle = (i / 5) * Math.PI * 2 + time * 0.5;
+                        const dist = radius + 5 + Math.sin(time + i) * 8;
+                        ctx.beginPath();
+                        ctx.arc(
+                            cx + Math.cos(angle) * dist,
+                            cy + Math.sin(angle) * dist,
+                            12, 0, Math.PI * 2
+                        );
+                        ctx.fill();
+                    }
+                    break;
+
+                case 'rainbow':
+                    const rainbowColors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#8b00ff'];
+                    for (let i = 0; i < rainbowColors.length; i++) {
+                        ctx.strokeStyle = rainbowColors[i];
+                        ctx.lineWidth = 3;
+                        ctx.globalAlpha = 0.5;
+                        ctx.beginPath();
+                        ctx.arc(cx, cy, radius + i * 5, time + i * 0.5, time + i * 0.5 + Math.PI);
+                        ctx.stroke();
+                    }
+                    ctx.globalAlpha = 1;
+                    break;
+            }
+        }
+
+        function generateCustomBallCode() {
+            const config = getDrawnBallConfig();
+
+            if (!config.imageData) {
+                alert('Please draw something on the canvas first!');
+                return;
+            }
+
+            // For sharing, we'll compress the data
+            const shareConfig = {
+                name: config.name,
+                imageData: config.imageData,
+                damage: config.damage,
+                speed: config.speed,
+                size: config.size,
+                abilities: config.abilities,
+                isDrawn: true
+            };
+
+            try {
+                const jsonStr = JSON.stringify(shareConfig);
+                const encoded = btoa(unescape(encodeURIComponent(jsonStr)));
+                const code = 'WB2-' + encoded;
+                document.getElementById('customBallCode').textContent = code;
+
+                // Auto-select for easy copying
+                const codeEl = document.getElementById('customBallCode');
+                if (window.getSelection) {
+                    const range = document.createRange();
+                    range.selectNodeContents(codeEl);
+                    window.getSelection().removeAllRanges();
+                    window.getSelection().addRange(range);
+                }
+            } catch (e) {
+                alert('Failed to generate code. The ball may be too complex.');
+                console.error(e);
+            }
+        }
+
+        function copyCustomBallCode() {
+            const code = document.getElementById('customBallCode').textContent;
+            if (code && (code.startsWith('WB-') || code.startsWith('WB2-'))) {
+                navigator.clipboard.writeText(code).then(() => {
+                    const btn = event.target;
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    setTimeout(() => btn.textContent = originalText, 1500);
+                }).catch(() => {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = code;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+
+                    const btn = event.target;
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    setTimeout(() => btn.textContent = originalText, 1500);
+                });
+            } else {
+                alert('Generate a code first!');
+            }
+        }
+
+        // Custom Ability Creator System
+        let createdCustomAbilities = [];
+        let abilityCreatorMode = false;
+
+        function toggleAbilityCreatorMode() {
+            abilityCreatorMode = !abilityCreatorMode;
+            const selectMode = document.getElementById('abilitySelectMode');
+            const creatorMode = document.getElementById('abilityCreatorMode');
+            const toggleBtn = document.getElementById('toggleAbilityMode');
+
+            if (abilityCreatorMode) {
+                selectMode.style.display = 'none';
+                creatorMode.style.display = 'block';
+                toggleBtn.textContent = 'Switch to Preset Abilities';
+                renderCreatedAbilities();
+            } else {
+                selectMode.style.display = 'block';
+                creatorMode.style.display = 'none';
+                toggleBtn.textContent = 'Switch to Custom Ability Creator';
+            }
+        }
+
+        // Update power/range sliders display
+        document.addEventListener('DOMContentLoaded', () => {
+            const powerSlider = document.getElementById('customAbilityPower');
+            const rangeSlider = document.getElementById('customAbilityRange');
+            if (powerSlider) {
+                powerSlider.oninput = () => {
+                    document.getElementById('customAbilityPowerVal').textContent = powerSlider.value;
+                };
+            }
+            if (rangeSlider) {
+                rangeSlider.oninput = () => {
+                    document.getElementById('customAbilityRangeVal').textContent = rangeSlider.value;
+                };
+            }
+        });
+
+        function addCustomAbilityToList() {
+            const name = document.getElementById('customAbilityName').value.trim() || 'Custom';
+            const effect = document.getElementById('customAbilityEffect').value;
+            const power = parseInt(document.getElementById('customAbilityPower').value);
+            const range = parseInt(document.getElementById('customAbilityRange').value);
+            const color = document.getElementById('customAbilityColor').value;
+
+            const customAbility = {
+                id: 'created_' + Date.now(),
+                name: name,
+                effect: effect,
+                power: power,
+                range: range,
+                color: color,
+                desc: getAbilityDescription(effect, power),
+                icon: getAbilityIcon(effect),
+                isCreated: true
+            };
+
+            createdCustomAbilities.push(customAbility);
+
+            // Also add to the customAbilityOptions so it can be selected
+            customAbilityOptions.push(customAbility);
+
+            renderCreatedAbilities();
+            populateAbilityGrid();
+
+            // Reset form
+            document.getElementById('customAbilityName').value = 'My Ability';
+            document.getElementById('customAbilityPower').value = 50;
+            document.getElementById('customAbilityRange').value = 100;
+            document.getElementById('customAbilityPowerVal').textContent = '50';
+            document.getElementById('customAbilityRangeVal').textContent = '100';
+        }
+
+        function getAbilityDescription(effect, power) {
+            const descriptions = {
+                damage: `Deal ${power} AoE damage`,
+                projectile: `Shoot projectile (${power} dmg)`,
+                heal: `Heal ${power} HP`,
+                shield: `Gain ${power} shield`,
+                speed: `${power}% speed boost`,
+                damageBoost: `${power}% damage boost`,
+                slow: `Slow enemies ${power}%`,
+                stun: `Stun for ${power/20}s`,
+                teleport: `Teleport randomly`,
+                invuln: `Invuln for ${power/20}s`
+            };
+            return descriptions[effect] || 'Custom effect';
+        }
+
+        function getAbilityIcon(effect) {
+            const icons = {
+                damage: '💥',
+                projectile: '🎯',
+                heal: '💚',
+                shield: '🛡️',
+                speed: '⚡',
+                damageBoost: '😤',
+                slow: '❄️',
+                stun: '⭐',
+                teleport: '✨',
+                invuln: '🔮'
+            };
+            return icons[effect] || '⚡';
+        }
+
+        function renderCreatedAbilities() {
+            const grid = document.getElementById('createdAbilitiesGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            if (createdCustomAbilities.length === 0) {
+                grid.innerHTML = '<div style="color: #aaa; grid-column: span 4; text-align: center;">No custom abilities created yet</div>';
+                return;
+            }
+
+            createdCustomAbilities.forEach((ability, index) => {
+                const isSelected = selectedCustomAbilities.includes(ability.id);
+                const div = document.createElement('div');
+                div.className = `created-ability-item ${isSelected ? 'selected' : ''}`;
+                div.innerHTML = `
+                    <button class="delete-ability" onclick="event.stopPropagation(); deleteCreatedAbility(${index})">×</button>
+                    <span style="font-size: 20px;">${ability.icon}</span>
+                    <div style="color: #fff; font-weight: bold; font-size: 11px;">${ability.name}</div>
+                    <div style="color: #aaa; font-size: 9px;">${ability.desc}</div>
+                `;
+                div.onclick = () => toggleAbilitySelection(ability.id);
+                grid.appendChild(div);
+            });
+        }
+
+        function deleteCreatedAbility(index) {
+            const ability = createdCustomAbilities[index];
+
+            // Remove from selected if it was selected
+            const selectedIdx = selectedCustomAbilities.indexOf(ability.id);
+            if (selectedIdx > -1) {
+                selectedCustomAbilities.splice(selectedIdx, 1);
+            }
+
+            // Remove from customAbilityOptions
+            const optionIdx = customAbilityOptions.findIndex(a => a.id === ability.id);
+            if (optionIdx > -1) {
+                customAbilityOptions.splice(optionIdx, 1);
+            }
+
+            createdCustomAbilities.splice(index, 1);
+            renderCreatedAbilities();
+            populateAbilityGrid();
+            updateCustomBallPreview();
+        }
+
+        function saveCustomBall() {
+            const config = getCustomBallConfig();
+            if (config.abilities.length < 1) {
+                alert('Please select at least 1 ability!');
+                return;
+            }
+
+            // Include created ability data for abilities that were custom-created
+            config.createdAbilities = config.abilities.map(id => {
+                const created = createdCustomAbilities.find(a => a.id === id);
+                return created ? created : null;
+            }).filter(a => a !== null);
+
+            config.id = 'custom_' + Date.now();
+            customBalls.push(config);
+
+            // Save to storage
+            saveCustomBallsToStorage();
+
+            // Create weapon entry
+            addCustomBallToWeapons(config);
+
+            renderSavedBalls();
+            alert(`"${config.name}" has been saved and added to your weapons!`);
+        }
+
+        // New save function for canvas-based drawn balls
+        function saveDrawnBall() {
+            const config = getDrawnBallConfig();
+
+            if (!config.imageData) {
+                alert('Please draw something on the canvas first!');
+                return;
+            }
+
+            if (config.abilities.length < 1) {
+                alert('Please select at least 1 ability!');
+                return;
+            }
+
+            // Include created ability data for abilities that were custom-created
+            config.createdAbilities = config.abilities.map(id => {
+                const created = createdCustomAbilities.find(a => a.id === id);
+                return created ? created : null;
+            }).filter(a => a !== null);
+
+            config.id = 'custom_' + Date.now();
+            customBalls.push(config);
+
+            // Save to storage
+            saveCustomBallsToStorage();
+
+            // Create weapon entry
+            addCustomBallToWeapons(config);
+
+            renderSavedBalls();
+
+            // Clear canvas for new creation
+            clearCanvas();
+
+            alert(`"${config.name}" has been saved and added to your weapons!`);
+        }
+
+        function saveCustomBallsToStorage() {
+            const data = JSON.stringify(customBalls);
+            if (isLocalStorageAvailable()) {
+                localStorage.setItem('weaponball_customBalls', data);
+            }
+            setCookie('wb_customBalls', customBalls);
+        }
+
+        function loadCustomBallsFromStorage() {
+            let data = null;
+            if (isLocalStorageAvailable()) {
+                data = localStorage.getItem('weaponball_customBalls');
+            }
+            if (!data) {
+                data = getCookie('wb_customBalls');
+                if (data) {
+                    data = JSON.stringify(data);
+                }
+            }
+            if (data) {
+                try {
+                    customBalls = JSON.parse(data);
+                    // Re-add all custom balls to weapons
+                    customBalls.forEach(config => addCustomBallToWeapons(config));
+                } catch (e) {
+                    customBalls = [];
+                }
+            }
+        }
+
+        function addCustomBallToWeapons(config) {
+            // Check if already exists
+            const existingIndex = weapons.findIndex(w => w.id === config.id);
+            if (existingIndex > -1) return;
+
+            const abilityNames = config.abilities.map(id => {
+                const ab = customAbilityOptions.find(a => a.id === id);
+                return ab ? ab.name : id;
+            }).join(', ');
+
+            weapons.push({
+                id: config.id,
+                name: config.name,
+                length: 35,
+                damage: config.damage || 25,
+                speed: config.speed || 1.0,
+                size: config.size || 1.0,
+                type: 'custom',
+                draw: (ctx, weapon, ball) => drawCustomBallInGame(ctx, weapon, ball, config),
+                ability: 'Custom Powers',
+                abilityDesc: `Custom: ${abilityNames}`,
+                abilityCooldown: config.cooldown || 180,
+                abilityDuration: 60,
+                color: config.color1 || '#ff6b35',
+                abilities: config.abilities,
+                customConfig: config
+            });
+
+            // Add to unlocked weapons
+            if (!gameData.unlockedWeapons.includes(config.id)) {
+                gameData.unlockedWeapons.push(config.id);
+                saveGameData();
+            }
+
+            // Refresh UI if initUI has been called
+            if (document.getElementById('ballSelection')) {
+                initUI();
+            }
+        }
+
+        // Cache for loaded custom ball images
+        const customBallImageCache = {};
+
+        function drawCustomBallInGame(ctx, weapon, ball, config) {
+            const time = Date.now() / 1000;
+            const size = weapon.length;
+
+            // Note: ctx is already translated to ball position by Ball.draw()
+            // So we draw relative to (0, 0)
+
+            // Check if this is a drawn ball with imageData
+            if (config.isDrawn && config.imageData) {
+                // Draw the custom ball from imageData
+                if (!customBallImageCache[config.id]) {
+                    // Create and cache the image
+                    const img = new Image();
+                    img.src = config.imageData;
+                    customBallImageCache[config.id] = img;
+                }
+
+                const img = customBallImageCache[config.id];
+                if (img.complete) {
+                    // Draw scaled to game size (centered at 0,0)
+                    const drawSize = size * 2;
+                    ctx.drawImage(img, -drawSize/2, -drawSize/2, drawSize, drawSize);
+                }
+            } else {
+                // Legacy preset-based custom ball
+                // Draw effect
+                if (config.effect && config.effect !== 'none') {
+                    drawCustomEffectGame(ctx, 0, 0, size + 5, config.effect, time, config.color1);
+                }
+
+                // Draw shape
+                drawCustomShapeGame(ctx, 0, 0, size, config);
+
+                // Draw hat
+                if (config.hat && config.hat !== 'none') {
+                    drawCustomHatGame(ctx, 0, -size, config.hat, time);
+                }
+
+                // Draw face
+                if (config.face && config.face !== 'none') {
+                    drawCustomFaceGame(ctx, 0, 0, size * 0.6, config);
+                }
+            }
+
+            // Ability active indicator
+            if (ball && ball.abilityActive) {
+                ctx.strokeStyle = '#ffff00';
+                ctx.shadowColor = '#ffff00';
+                ctx.shadowBlur = 20;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.arc(0, 0, size + 8, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        // Game versions of drawing functions (don't use save/restore or beginPath before fill)
+        function drawCustomShapeGame(ctx, cx, cy, size, config) {
+            const gradient = ctx.createRadialGradient(cx - size/3, cy - size/3, 0, cx, cy, size);
+            gradient.addColorStop(0, config.color1);
+            gradient.addColorStop(1, config.color2);
+
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+
+            switch (config.shape) {
+                case 'circle':
+                default:
+                    ctx.arc(cx, cy, size, 0, Math.PI * 2);
+                    break;
+                case 'square':
+                    ctx.save();
+                    ctx.translate(cx, cy);
+                    ctx.rotate(Math.PI / 4);
+                    ctx.rect(-size * 0.7, -size * 0.7, size * 1.4, size * 1.4);
+                    ctx.restore();
+                    break;
+                case 'star':
+                    for (let i = 0; i < 10; i++) {
+                        const radius = i % 2 === 0 ? size : size * 0.5;
+                        const angle = (i * Math.PI / 5) - Math.PI / 2;
+                        if (i === 0) ctx.moveTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                        else ctx.lineTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                    }
+                    ctx.closePath();
+                    break;
+                case 'spiky':
+                    for (let i = 0; i < 24; i++) {
+                        const radius = i % 2 === 0 ? size : size * 0.7;
+                        const angle = (i * Math.PI / 12) - Math.PI / 2;
+                        if (i === 0) ctx.moveTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                        else ctx.lineTo(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                    }
+                    ctx.closePath();
+                    break;
+                case 'hexagon':
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i * 2 * Math.PI / 6) - Math.PI / 2;
+                        if (i === 0) ctx.moveTo(cx + size * Math.cos(angle), cy + size * Math.sin(angle));
+                        else ctx.lineTo(cx + size * Math.cos(angle), cy + size * Math.sin(angle));
+                    }
+                    ctx.closePath();
+                    break;
+            }
+
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        function drawCustomFaceGame(ctx, cx, cy, size, config) {
+            const eyeColor = config.eyeColor || '#ffffff';
+
+            switch (config.face) {
+                case 'normal':
+                    // Eyes
+                    ctx.fillStyle = eyeColor;
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Pupils
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.35, cy - size * 0.1, size * 0.12, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.45, cy - size * 0.1, size * 0.12, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Smile
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + size * 0.2, size * 0.3, 0.1 * Math.PI, 0.9 * Math.PI);
+                    ctx.stroke();
+                    break;
+
+                case 'angry':
+                    ctx.fillStyle = eyeColor;
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.4, cy - size * 0.1, size * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.35, cy - size * 0.05, size * 0.12, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.45, cy - size * 0.05, size * 0.12, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Eyebrows
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(cx - size * 0.6, cy - size * 0.4);
+                    ctx.lineTo(cx - size * 0.2, cy - size * 0.25);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(cx + size * 0.6, cy - size * 0.4);
+                    ctx.lineTo(cx + size * 0.2, cy - size * 0.25);
+                    ctx.stroke();
+                    break;
+
+                case 'happy':
+                    ctx.strokeStyle = '#000';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.4, cy - size * 0.1, size * 0.2, 1.1 * Math.PI, 1.9 * Math.PI);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.4, cy - size * 0.1, size * 0.2, 1.1 * Math.PI, 1.9 * Math.PI);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + size * 0.1, size * 0.4, 0, Math.PI);
+                    ctx.stroke();
+                    break;
+
+                case 'cool':
+                    ctx.fillStyle = '#000';
+                    ctx.fillRect(cx - size * 0.7, cy - size * 0.3, size * 0.55, size * 0.35);
+                    ctx.fillRect(cx + size * 0.15, cy - size * 0.3, size * 0.55, size * 0.35);
+                    ctx.fillRect(cx - size * 0.15, cy - size * 0.2, size * 0.3, size * 0.1);
+                    break;
+
+                case 'cyclops':
+                    ctx.fillStyle = eyeColor;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy - size * 0.05, size * 0.4, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#000';
+                    ctx.beginPath();
+                    ctx.arc(cx, cy - size * 0.05, size * 0.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    break;
+
+                case 'robot':
+                    ctx.fillStyle = '#00ffff';
+                    ctx.fillRect(cx - size * 0.55, cy - size * 0.25, size * 0.35, size * 0.25);
+                    ctx.fillRect(cx + size * 0.2, cy - size * 0.25, size * 0.35, size * 0.25);
+                    ctx.strokeStyle = '#00ffff';
+                    ctx.lineWidth = 2;
+                    ctx.strokeRect(cx - size * 0.3, cy + size * 0.15, size * 0.6, size * 0.2);
+                    break;
+
+                case 'demon':
+                    ctx.fillStyle = '#ff0000';
+                    ctx.beginPath();
+                    ctx.arc(cx - size * 0.35, cy - size * 0.1, size * 0.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(cx + size * 0.35, cy - size * 0.1, size * 0.2, 0, Math.PI * 2);
+                    ctx.fill();
+                    // Fangs
+                    ctx.fillStyle = '#fff';
+                    ctx.beginPath();
+                    ctx.moveTo(cx - size * 0.15, cy + size * 0.2);
+                    ctx.lineTo(cx - size * 0.05, cy + size * 0.45);
+                    ctx.lineTo(cx + size * 0.05, cy + size * 0.2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.moveTo(cx + size * 0.05, cy + size * 0.2);
+                    ctx.lineTo(cx + size * 0.15, cy + size * 0.45);
+                    ctx.lineTo(cx + size * 0.25, cy + size * 0.2);
+                    ctx.fill();
+                    break;
+            }
+        }
+
+        function drawCustomHatGame(ctx, cx, cy, hat, time) {
+            switch (hat) {
+                case 'tophat':
+                    ctx.fillStyle = '#1a1a1a';
+                    ctx.fillRect(cx - 20, cy - 5, 40, 8);
+                    ctx.fillRect(cx - 12, cy - 30, 24, 25);
+                    break;
+
+                case 'crown':
+                    ctx.fillStyle = '#ffd700';
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 18, cy);
+                    ctx.lineTo(cx - 18, cy - 12);
+                    ctx.lineTo(cx - 10, cy - 6);
+                    ctx.lineTo(cx - 5, cy - 18);
+                    ctx.lineTo(cx, cy - 8);
+                    ctx.lineTo(cx + 5, cy - 18);
+                    ctx.lineTo(cx + 10, cy - 6);
+                    ctx.lineTo(cx + 18, cy - 12);
+                    ctx.lineTo(cx + 18, cy);
+                    ctx.closePath();
+                    ctx.fill();
+                    break;
+
+                case 'halo':
+                    ctx.strokeStyle = '#ffff00';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.ellipse(cx, cy - 8, 20, 6, 0, 0, Math.PI * 2);
+                    ctx.stroke();
+                    break;
+
+                case 'horns':
+                    ctx.fillStyle = '#8b0000';
+                    ctx.beginPath();
+                    ctx.moveTo(cx - 20, cy + 5);
+                    ctx.quadraticCurveTo(cx - 28, cy - 15, cx - 15, cy - 25);
+                    ctx.quadraticCurveTo(cx - 12, cy - 10, cx - 12, cy + 5);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.moveTo(cx + 20, cy + 5);
+                    ctx.quadraticCurveTo(cx + 28, cy - 15, cx + 15, cy - 25);
+                    ctx.quadraticCurveTo(cx + 12, cy - 10, cx + 12, cy + 5);
+                    ctx.fill();
+                    break;
+
+                case 'cap':
+                    ctx.fillStyle = '#cc0000';
+                    ctx.beginPath();
+                    ctx.arc(cx, cy + 3, 18, Math.PI, 0);
+                    ctx.fill();
+                    ctx.fillRect(cx - 3, cy, 22, 6);
+                    break;
+
+                case 'wizard':
+                    ctx.fillStyle = '#4a0080';
+                    ctx.beginPath();
+                    ctx.moveTo(cx, cy - 40);
+                    ctx.lineTo(cx - 20, cy + 5);
+                    ctx.lineTo(cx + 20, cy + 5);
+                    ctx.closePath();
+                    ctx.fill();
+                    break;
+
+                case 'party':
+                    const gradient = ctx.createLinearGradient(cx - 15, cy, cx + 15, cy);
+                    gradient.addColorStop(0, '#ff0000');
+                    gradient.addColorStop(0.5, '#00ff00');
+                    gradient.addColorStop(1, '#0000ff');
+                    ctx.fillStyle = gradient;
+                    ctx.beginPath();
+                    ctx.moveTo(cx, cy - 35);
+                    ctx.lineTo(cx - 15, cy + 5);
+                    ctx.lineTo(cx + 15, cy + 5);
+                    ctx.closePath();
+                    ctx.fill();
+                    break;
+            }
+        }
+
+        function drawCustomEffectGame(ctx, cx, cy, radius, effect, time, color) {
+            switch (effect) {
+                case 'fire':
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i / 6) * Math.PI * 2 + time * 2;
+                        const flicker = Math.sin(time * 8 + i) * 4;
+                        ctx.fillStyle = `rgba(255, ${100 + (i * 20)}, 0, 0.5)`;
+                        ctx.beginPath();
+                        ctx.arc(
+                            cx + Math.cos(angle) * (radius + flicker),
+                            cy + Math.sin(angle) * (radius + flicker),
+                            6, 0, Math.PI * 2
+                        );
+                        ctx.fill();
+                    }
+                    break;
+
+                case 'electric':
+                    ctx.strokeStyle = '#00ffff';
+                    ctx.lineWidth = 2;
+                    for (let i = 0; i < 4; i++) {
+                        const angle = (i / 4) * Math.PI * 2 + time * 3;
+                        ctx.beginPath();
+                        ctx.moveTo(cx, cy);
+                        let x = cx, y = cy;
+                        for (let j = 0; j < 3; j++) {
+                            x += Math.cos(angle) * 12 + (Math.sin(time * 10 + i + j) * 8);
+                            y += Math.sin(angle) * 12 + (Math.cos(time * 10 + i + j) * 8);
+                            ctx.lineTo(x, y);
+                        }
+                        ctx.stroke();
+                    }
+                    break;
+
+                case 'sparkle':
+                    for (let i = 0; i < 8; i++) {
+                        const angle = (i / 8) * Math.PI * 2 + time;
+                        const dist = radius + Math.sin(time * 3 + i) * 8;
+                        const sparkleSize = 2 + Math.sin(time * 5 + i * 2) * 1.5;
+                        ctx.fillStyle = `rgba(255, 255, 150, ${0.5 + Math.sin(time * 4 + i) * 0.3})`;
+                        ctx.beginPath();
+                        ctx.arc(cx + Math.cos(angle) * dist, cy + Math.sin(angle) * dist, sparkleSize, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    break;
+
+                case 'shadow':
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+                    for (let i = 0; i < 4; i++) {
+                        const angle = (i / 4) * Math.PI * 2 + time * 0.5;
+                        const dist = radius + 3 + Math.sin(time + i) * 5;
+                        ctx.beginPath();
+                        ctx.arc(cx + Math.cos(angle) * dist, cy + Math.sin(angle) * dist, 8, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    break;
+
+                case 'rainbow':
+                    const rainbowColors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#8b00ff'];
+                    ctx.lineWidth = 2;
+                    ctx.globalAlpha = 0.4;
+                    for (let i = 0; i < rainbowColors.length; i++) {
+                        ctx.strokeStyle = rainbowColors[i];
+                        ctx.beginPath();
+                        ctx.arc(cx, cy, radius + i * 4, time + i * 0.4, time + i * 0.4 + Math.PI);
+                        ctx.stroke();
+                    }
+                    ctx.globalAlpha = 1;
+                    break;
+            }
+        }
+
+        function importCustomBall() {
+            const input = document.getElementById('importCodeInput');
+            const code = input.value.trim();
+
+            if (!code.startsWith('WB-') && !code.startsWith('WB2-')) {
+                alert('Invalid code! Codes should start with "WB-" or "WB2-"');
+                return;
+            }
+
+            try {
+                // Determine version
+                const isV2 = code.startsWith('WB2-');
+                const encoded = isV2 ? code.substring(4) : code.substring(3);
+                const jsonStr = decodeURIComponent(escape(atob(encoded)));
+                const config = JSON.parse(jsonStr);
+
+                if (isV2 || config.isDrawn) {
+                    // New canvas-based ball with imageData
+                    if (!config.name || !config.imageData) {
+                        throw new Error('Invalid drawn ball config');
+                    }
+
+                    // Load the image onto the canvas
+                    const img = new Image();
+                    img.onload = () => {
+                        if (drawingCtx) {
+                            drawingCtx.clearRect(0, 0, 200, 200);
+                            drawingCtx.drawImage(img, 0, 0, 200, 200);
+                            saveToUndo();
+                            updateLivePreview();
+                        }
+
+                        // Set form values
+                        document.getElementById('customBallName').value = config.name;
+                        document.getElementById('customBallDamage').value = config.damage || 25;
+                        document.getElementById('customBallSpeed').value = config.speed || 1.0;
+                        document.getElementById('customBallSize').value = config.size || 1.0;
+
+                        selectedCustomAbilities = config.abilities || [];
+                        updateStatsDisplay();
+                        populateAbilityGrid();
+                        updateSelectedAbilitySlots();
+
+                        input.value = '';
+                        alert(`Imported "${config.name}" successfully! Click "Save Ball" to add it to your weapons.`);
+                    };
+                    img.onerror = () => {
+                        alert('Failed to load ball image data.');
+                    };
+                    img.src = config.imageData;
+                } else {
+                    // Legacy preset-based ball - convert to drawn format
+                    // Just import the basic settings
+                    document.getElementById('customBallName').value = config.name || 'Imported Ball';
+                    document.getElementById('customBallDamage').value = config.damage || 25;
+                    document.getElementById('customBallSpeed').value = config.speed || 1.0;
+                    document.getElementById('customBallSize').value = config.size || 1.0;
+
+                    selectedCustomAbilities = config.abilities || [];
+                    updateStatsDisplay();
+                    populateAbilityGrid();
+                    updateSelectedAbilitySlots();
+
+                    input.value = '';
+                    alert(`Imported "${config.name}" (legacy format). Draw your ball design and click "Save Ball" to complete.`);
+                }
+            } catch (e) {
+                alert('Failed to import code. The code may be invalid or corrupted.');
+                console.error(e);
+            }
+        }
+
+        function renderSavedBalls() {
+            const grid = document.getElementById('savedBallsGrid');
+            grid.innerHTML = '';
+
+            if (customBalls.length === 0) {
+                grid.innerHTML = '<div style="color: #aaa; text-align: center; grid-column: span 3;">No saved balls yet. Create one above!</div>';
+                return;
+            }
+
+            customBalls.forEach((config, index) => {
+                const div = document.createElement('div');
+                div.className = 'saved-ball-item';
+                div.innerHTML = `
+                    <canvas class="saved-ball-preview" width="60" height="60" data-index="${index}"></canvas>
+                    <div class="saved-ball-name">${config.name}</div>
+                    <button class="delete-ball-btn" onclick="deleteCustomBall(${index})">×</button>
+                `;
+                grid.appendChild(div);
+
+                // Draw preview
+                setTimeout(() => {
+                    const canvas = div.querySelector('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    if (config.isDrawn && config.imageData) {
+                        // Draw from imageData
+                        const img = new Image();
+                        img.onload = () => {
+                            ctx.drawImage(img, 0, 0, 60, 60);
+                        };
+                        img.src = config.imageData;
+                    } else {
+                        // Legacy preset-based ball
+                        drawCustomShape(ctx, 30, 30, 20, config);
+                        if (config.face !== 'none') {
+                            drawCustomFace(ctx, 30, 30, 12, config);
+                        }
+                    }
+                }, 0);
+            });
+        }
+
+        function deleteCustomBall(index) {
+            const config = customBalls[index];
+            if (confirm(`Delete "${config.name}"?`)) {
+                // Remove from weapons array
+                const weaponIndex = weapons.findIndex(w => w.id === config.id);
+                if (weaponIndex > -1) {
+                    weapons.splice(weaponIndex, 1);
+                }
+
+                // Remove from unlocked
+                const unlockedIndex = gameData.unlockedWeapons.indexOf(config.id);
+                if (unlockedIndex > -1) {
+                    gameData.unlockedWeapons.splice(unlockedIndex, 1);
+                    saveGameData();
+                }
+
+                customBalls.splice(index, 1);
+                saveCustomBallsToStorage();
+                renderSavedBalls();
+                initUI();
+            }
+        }
+
+        // Load custom balls on startup
+        setTimeout(loadCustomBallsFromStorage, 100);
+
+        // Animate preview
+        setInterval(() => {
+            const panel = document.getElementById('customBallPanel');
+            if (panel && panel.classList.contains('active')) {
+                updateCustomBallPreview();
+            }
+        }, 50);
+
+        // ============================================
+        // END CUSTOM BALL CREATOR
+        // ============================================
 
         // Initialize
         initUI();
