@@ -1595,23 +1595,121 @@
             melee: 50
         };
 
-        // Load saved data from localStorage
+        // === COOKIE STORAGE SYSTEM ===
+        // Cookie helper functions for GitHub Pages deployment
+        function setCookie(name, value, days = 365) {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+            // For large data, we need to compress and split across multiple cookies
+            const jsonStr = JSON.stringify(value);
+            const encoded = encodeURIComponent(jsonStr);
+
+            // Cookies have a ~4KB limit, so split if needed
+            const chunkSize = 3800; // Leave room for name and metadata
+            const chunks = [];
+            for (let i = 0; i < encoded.length; i += chunkSize) {
+                chunks.push(encoded.substring(i, i + chunkSize));
+            }
+
+            // Store chunk count
+            document.cookie = `${name}_chunks=${chunks.length};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+
+            // Store each chunk
+            chunks.forEach((chunk, index) => {
+                document.cookie = `${name}_${index}=${chunk};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+            });
+        }
+
+        function getCookie(name) {
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [key, val] = cookie.trim().split('=');
+                acc[key] = val;
+                return acc;
+            }, {});
+
+            // Get chunk count
+            const chunkCount = parseInt(cookies[`${name}_chunks`]) || 0;
+            if (chunkCount === 0) return null;
+
+            // Reassemble chunks
+            let encoded = '';
+            for (let i = 0; i < chunkCount; i++) {
+                const chunk = cookies[`${name}_${i}`];
+                if (!chunk) return null; // Missing chunk
+                encoded += chunk;
+            }
+
+            try {
+                return JSON.parse(decodeURIComponent(encoded));
+            } catch (e) {
+                console.error('Failed to parse cookie data:', e);
+                return null;
+            }
+        }
+
+        function deleteCookie(name) {
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [key] = cookie.trim().split('=');
+                acc[key] = true;
+                return acc;
+            }, {});
+
+            // Delete chunk count
+            document.cookie = `${name}_chunks=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+
+            // Delete all possible chunks (up to 20 should be plenty)
+            for (let i = 0; i < 20; i++) {
+                if (cookies[`${name}_${i}`]) {
+                    document.cookie = `${name}_${i}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+                }
+            }
+        }
+
+        // Check if localStorage is available
+        function isLocalStorageAvailable() {
+            try {
+                const test = '__storage_test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        const useLocalStorage = isLocalStorageAvailable();
+        console.log('Storage mode:', useLocalStorage ? 'localStorage' : 'cookies');
+
+        // Load saved data from localStorage or cookies
         const GACHA_VERSION = 5; // Increment to reset player data
 
         function loadGameData() {
-            const saved = localStorage.getItem('weaponBallData');
-            console.log('Loading game data, saved:', saved);
+            let saved = null;
+
+            // Try localStorage first, then cookies
+            if (useLocalStorage) {
+                saved = localStorage.getItem('weaponBallData');
+                if (saved) saved = JSON.parse(saved);
+            }
+
+            // If no localStorage data, try cookies
+            if (!saved) {
+                saved = getCookie('weaponBallData');
+            }
+
+            console.log('Loading game data, saved:', saved ? 'found' : 'none');
+
             if (saved) {
-                const data = JSON.parse(saved);
-                console.log('Parsed data version:', data.version, 'Current version:', GACHA_VERSION);
+                console.log('Parsed data version:', saved.version, 'Current version:', GACHA_VERSION);
                 // Check version - if old version or no version, reset to new defaults
-                if (!data.version || data.version < GACHA_VERSION) {
+                if (!saved.version || saved.version < GACHA_VERSION) {
                     console.log('Resetting gacha data to new version');
-                    localStorage.removeItem('weaponBallData');
+                    if (useLocalStorage) localStorage.removeItem('weaponBallData');
+                    deleteCookie('weaponBallData');
                     return getDefaultGameData();
                 }
-                console.log('Using saved data, unlocked weapons:', data.unlockedWeapons);
-                return data;
+                console.log('Using saved data, unlocked weapons:', saved.unlockedWeapons);
+                return saved;
             }
             console.log('No saved data, using defaults');
             return getDefaultGameData();
@@ -1639,7 +1737,22 @@
 
         function saveGameData() {
             gameData.version = GACHA_VERSION; // Always ensure version is set
-            localStorage.setItem('weaponBallData', JSON.stringify(gameData));
+
+            // Save to localStorage if available
+            if (useLocalStorage) {
+                try {
+                    localStorage.setItem('weaponBallData', JSON.stringify(gameData));
+                } catch (e) {
+                    console.warn('localStorage save failed, using cookies:', e);
+                }
+            }
+
+            // Always also save to cookies as backup (works on GitHub Pages)
+            try {
+                setCookie('weaponBallData', gameData);
+            } catch (e) {
+                console.warn('Cookie save failed:', e);
+            }
         }
 
         // === SKILL TREE SYSTEM ===
